@@ -29,8 +29,6 @@ class TitleActivity : AppCompatActivity() {
             }
         } else {
             // 토큰이 존재하면 MainActivity로 이동 (로그인 정보가 저장되어 있는 경우)
-            Log.d("mylog", "onCreate: 토큰존재")
-            Log.d("mylog", "onCreate: 토큰존재${token}")
             startActivity(Intent(this, MainActivity::class.java))
             finish()    // TitleActivity 종료
         }

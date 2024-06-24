@@ -10,20 +10,31 @@
     android:orientation="vertical"
     android:padding="32dp">
 
-    <EditText
-        android:id="@+id/EditTextUsername"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:hint="사용자아이디(ID)를 입력하세요"
-        android:inputType="text" />
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/EditTextUserId"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:layout_marginRight="24dp"
+            android:hint="아이디(ID)를 입력하세요"
+            android:inputType="text" />
+        <Button
+            android:id="@+id/buttonCheckedIdExist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디 확인" />
+    </LinearLayout>
 
     <EditText
         android:id="@+id/EditTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:hint="비밀번호를 입력하세요"
+        android:hint="비밀번호를 입력하세요 \n영문, 숫자, 특수문자 모두 포함 8~20자리"
         android:inputType="textPassword" />
 
     <EditText
@@ -34,34 +45,38 @@
         android:hint="닉네임을 입력하세요"
         android:inputType="text" />
 
-    <LinearLayout
+    <RadioGroup
+        android:id="@+id/UserGender"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <RadioButton
-            android:id="@+id/CheckGenderM"
+            android:id="@+id/male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="남"/>
 
         <RadioButton
-            android:id="@+id/CheckGenderF"
+            android:id="@+id/female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="여"/>
 
         <RadioButton
-            android:id="@+id/CheckGenderN"
+            android:id="@+id/none"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="none"/>
-    </LinearLayout>
+            android:text="none"
+            android:checked="true"/>
+    </RadioGroup>
 
     <EditText
         android:id="@+id/EditTextBirth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:hint="생년월일을 입력하세요"
+        android:hint="생년월일을 입력하세요 (형식: 1999-01-01)"
         android:inputType="text" />
 
     <EditText

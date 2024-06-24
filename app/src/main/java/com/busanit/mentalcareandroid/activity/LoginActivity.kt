@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
         // 로그인 버튼 클릭했을 때 이벤트
         binding.buttonLogin.setOnClickListener {
             // 사용자로부터 정보를 입력받아 데이터 객체 생성
-            val userId = binding.EditTextUsername.text.toString()
+            val userId = binding.EditTextUserId.text.toString()
             val userPw = binding.EditTextPassword.text.toString()
             val user = McUserLogin(userId, userPw)
 
@@ -56,14 +56,11 @@ class LoginActivity : AppCompatActivity() {
 
                     } else {
                         Toast.makeText(this@LoginActivity, "로그인 실패했습니다.", Toast.LENGTH_SHORT).show()
-                        Log.d("mylog", "onResponse: ${response.code()}")
                     }
                 }
 
                 override fun onFailure(call: Call<McUserLoginSuccess>, t: Throwable) {
                     Toast.makeText(this@LoginActivity, "로그인 네트워크 요청 실패했습니다.", Toast.LENGTH_SHORT).show()
-                    Log.d("mylog", "onFailure: ${t.message}")
-                    Log.d("mylog", "onFailure: ${t.printStackTrace()}")
                 }
             })
         }

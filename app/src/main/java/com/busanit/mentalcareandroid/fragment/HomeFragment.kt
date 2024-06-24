@@ -12,6 +12,7 @@ import com.busanit.mentalcareandroid.R
 import com.busanit.mentalcareandroid.activity.LoginActivity
 import com.busanit.mentalcareandroid.activity.TitleActivity
 import com.busanit.mentalcareandroid.activity.UpdateUserActivity
+import com.busanit.mentalcareandroid.activity.WithdrawUserActivity
 import com.busanit.mentalcareandroid.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -40,6 +41,14 @@ class HomeFragment : Fragment() {
 
         // 회원 정보 수정 버튼 클릭 -> 회원정보수정 페이지
         binding.buttonUpdateUser.setOnClickListener { updateUser() }
+
+        // 회원 탈퇴 버튼 클릭 -> 회원 확인
+        binding.buttonWithDrawUser.setOnClickListener { withdrawUser() }
+    }
+
+    // 회원 탈퇴 함수
+    private fun withdrawUser() {
+        startActivity(Intent(activity, WithdrawUserActivity::class.java))
     }
 
     // 로그아웃 함수
@@ -60,7 +69,6 @@ class HomeFragment : Fragment() {
 
     // 회원 정보 수정 함수
     private fun updateUser() {
-
         startActivity(Intent(activity, UpdateUserActivity::class.java))
     }
 }

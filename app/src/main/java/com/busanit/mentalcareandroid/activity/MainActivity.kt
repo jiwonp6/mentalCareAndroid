@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity() {
                 // 응답 코드가 200번대
                 if (response.isSuccessful) {
                     Toast.makeText(this@MainActivity, "응답성공", Toast.LENGTH_SHORT).show()
-                    Log.d("mylog", "onResponse: ${response.code()}, ${response.body()}")
                 } else {
                     // 응답하였지만, 400~500 번대인 경우
                     Toast.makeText(
@@ -59,14 +58,12 @@ class MainActivity : AppCompatActivity() {
                         "응답실패, ${response.code()}",
                         Toast.LENGTH_SHORT
                     ).show()
-                    Log.d("mylog", "onResponse: ${response.code()}, ${response.body()}")
                 }
             }
 
             // 네트워크 요청 실패
             override fun onFailure(call: Call<Test>, t: Throwable) {
                 Toast.makeText(this@MainActivity, "요청 실패, ${t.message}", Toast.LENGTH_SHORT).show()
-                Log.d("mylog", "${t.message}")
             }
         })
     }
@@ -81,7 +78,6 @@ class MainActivity : AppCompatActivity() {
                 // 응답 코드가 200번대
                 if (response.isSuccessful) {
                     Toast.makeText(this@MainActivity, "응답성공", Toast.LENGTH_SHORT).show()
-                    Log.d("mylog", "onResponse: ${response.code()}, ${response.body()}")
                 } else {
                     // 응답하였지만, 400~500 번대인 경우
                     Toast.makeText(
@@ -89,14 +85,12 @@ class MainActivity : AppCompatActivity() {
                         "응답실패, ${response.code()}",
                         Toast.LENGTH_SHORT
                     ).show()
-                    Log.d("mylog", "onResponse: ${response.code()}, ${response.body()}")
                 }
             }
 
             // 네트워크 요청 실패
             override fun onFailure(call: Call<Test>, t: Throwable) {
                 Toast.makeText(this@MainActivity, "요청 실패, ${t.message}", Toast.LENGTH_SHORT).show()
-                Log.d("mylog", "${t.message}")
             }
         })
     }
