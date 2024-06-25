@@ -1,18 +1,12 @@
 package com.busanit.mentalcareandroid.activity
 
-import android.content.Context
-import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
-import androidx.core.text.set
-import com.busanit.mentalcareandroid.R
 import com.busanit.mentalcareandroid.RetrofitClient
 import com.busanit.mentalcareandroid.databinding.ActivityUpdateUserBinding
 import com.busanit.mentalcareandroid.model.McUser
@@ -22,7 +16,6 @@ import com.busanit.mentalcareandroid.model.McUserUpdate
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.stream.Collectors.toSet
 
 class UpdateUserActivity : AppCompatActivity() {
     lateinit var binding: ActivityUpdateUserBinding
@@ -70,8 +63,8 @@ class UpdateUserActivity : AppCompatActivity() {
                 pattern = "[a-z0-9#?!@\$%^&*-](?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@\$ %^&*-])[a-z0-9#?!@\$%^&*-]{8,20}",
                 options = setOf(RegexOption.IGNORE_CASE)
             )
-            if (!regexPw.matches(userPw)) {
-                binding.EditTextPassword.requestFocus()
+            if (!regexPw.matches(userPwNew)) {
+                binding.EditTextNewPassword.requestFocus()
                 Toast.makeText(this@UpdateUserActivity, "비밀번호 형식을 확인해 주세요.", Toast.LENGTH_SHORT)
                     .show()
                 return@setOnClickListener

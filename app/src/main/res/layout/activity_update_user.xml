@@ -19,7 +19,7 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="15dp"
         android:hint="현재 비밀번호를 입력하세요"
         android:inputType="textPassword" />
 
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:hint="새로운 비밀번호를 입력하세요"
-        android:inputType="text" />
+        android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/EditTextNickname"

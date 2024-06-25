@@ -14,8 +14,6 @@ object RetrofitClient {
     // 공식문서 : https://developer.android.com/studio/run/emulator-networking?hl=ko
 
     private val BASE_URL = "http://10.0.2.2:8080"    // 개인 PC의 localhost(127.0.0.1) 루프백 주소
-    
-    // private val BASE_URL = "http://10.100.203.114:8080"   // 개인 PC의 IP주소
 
     val gson : Gson = GsonBuilder()
         .setLenient()

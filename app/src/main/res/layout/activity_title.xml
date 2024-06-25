@@ -5,24 +5,22 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.TitleActivity"
+    android:gravity="center"
     android:orientation="vertical"
-    android:gravity="center">
+    tools:context=".activity.TitleActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="앱 제목, 로그인 또는 회원가입 해주세요"
         android:layout_marginBottom="48dp"
-        />
+        android:text="앱 제목, 로그인 또는 회원가입 해주세요" />
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="로그인"
         android:layout_marginBottom="24dp"
-        />
+        android:text="로그인" />
 
     <Button
         android:id="@+id/buttonRegister"

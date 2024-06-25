@@ -16,17 +16,17 @@
         android:orientation="horizontal">
         <EditText
             android:id="@+id/EditTextUserId"
-            android:layout_width="200dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:layout_marginRight="24dp"
+            android:layout_marginRight="15dp"
             android:hint="아이디(ID)를 입력하세요"
             android:inputType="text" />
         <Button
             android:id="@+id/buttonCheckedIdExist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="아이디 확인" />
+            android:text="확인" />
     </LinearLayout>
 
     <EditText

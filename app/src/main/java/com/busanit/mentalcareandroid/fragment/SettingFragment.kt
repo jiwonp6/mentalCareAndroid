@@ -7,8 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.busanit.mentalcareandroid.R
 import com.busanit.mentalcareandroid.activity.TitleActivity
+import com.busanit.mentalcareandroid.activity.UpdateUserActivity
+import com.busanit.mentalcareandroid.activity.WithdrawUserActivity
 import com.busanit.mentalcareandroid.databinding.FragmentSettingBinding
 
 class SettingFragment : Fragment() {
@@ -25,8 +28,44 @@ class SettingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // 로그인 시 저장된 사용자 이름을 가져옴
+        val sharedPreferences = activity?.getSharedPreferences("app_pref", Context.MODE_PRIVATE)
+        val userNickname = sharedPreferences?.getString("userNickname", "")
+
+        setOf(binding.userNickname.text, userNickname)
+
+        binding.buttonLogout.run{ logout() }
+        binding.buttonModifyUser.run{ updateUser() }
+        binding.buttonWithdrawUser.run{ withdrawUser() }
     }
 
+    // 회원 탈퇴 함수
+    private fun withdrawUser() {
+        startActivity(Intent(activity, WithdrawUserActivity::class.java))
+    }
+
+    // 로그아웃 함수
+    private fun logout() {
+        // 1. SharedPreferences 에서 토큰, 사용자 정보 삭제
+        val sharedPreferences = activity?.getSharedPreferences("app_pref", Context.MODE_PRIVATE)
+        sharedPreferences?.edit()
+            ?.remove("token")
+            ?.remove("useId")
+            ?.remove("userNickname")
+            ?.apply()
+
+        // Toast 띄우기
+        Toast.makeText(requireContext(), "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
+
+        // 2. TitleActivity 로 돌려 보내고 현재 화면 종료
+        startActivity(Intent(activity, TitleActivity::class.java))
+        activity?.finish()
+    }
+
+    // 회원 정보 수정 함수
+    private fun updateUser() {
+        startActivity(Intent(activity, UpdateUserActivity::class.java))
+    }
 
 
 }

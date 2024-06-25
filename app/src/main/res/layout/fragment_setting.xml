@@ -6,11 +6,25 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".fragment.SettingFragment">
-
+    <TextView
+        android:id="@+id/userNickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="userNickname"/>
     <Button
         android:id="@+id/buttonLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="로그아웃" />
+    <Button
+        android:id="@+id/buttonModifyUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원 정보 수정"/>
+    <Button
+        android:id="@+id/buttonWithdrawUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원 탈퇴"/>
 
 </LinearLayout>
