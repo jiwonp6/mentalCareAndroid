@@ -5,9 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.WriteMyEmotionDiaryActivity"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    tools:context=".activity.EmotionDiaryActivity"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="감정일지 작성"/>
 
 
 </LinearLayout>

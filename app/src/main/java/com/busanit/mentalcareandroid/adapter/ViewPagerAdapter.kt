@@ -9,8 +9,7 @@ import com.busanit.mentalcareandroid.fragment.SettingFragment
 class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity){
 
     private val fragments = listOf(
-        HomeFragment(),
-        SettingFragment()
+        HomeFragment()
     )
     override fun getItemCount(): Int = fragments.size
 

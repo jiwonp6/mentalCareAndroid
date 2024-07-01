@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupViewPager() {
         binding.viewPager.adapter = ViewPagerAdapter(this)
 
-        val tabTitles = listOf("홈", "게시판", "설정")
+        val tabTitles = listOf("홈", "병원", "게시판")
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager) {
                 tab, position -> tab.text = tabTitles[position]

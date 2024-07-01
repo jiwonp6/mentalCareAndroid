@@ -16,7 +16,7 @@
         android:theme="@style/Theme.MentalCareAndroid"
         tools:targetApi="31">
         <activity
-            android:name=".activity.MyEmotionDiaryActivity"
+            android:name=".activity.UpdateEmotionDiaryActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.WriteMyEmotionDiaryActivity"
+            android:name=".activity.EmotionDiaryDetailViewActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MonthlyActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.EmotionDiaryActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.WriteEmotionDiaryActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
