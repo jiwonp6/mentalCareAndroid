@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--title-->
+    <style name="title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+    <style name="explain">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">#4C4F4C</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+
+<!--login-->
+    <style name="mentalcare">
+        <item name="android:textSize">32sp</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:textColor">#4C4F4C</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+    <style name="login_title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+    <style name="label">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#828282</item>
+    </style>
+    <style name="findId">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#828282</item>
+    </style>
+
+<!--homeFrag-->
+    <style name="home_title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:textColor">#4C4F4C</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+    <style name="home_nickName">
+        <item name="android:textSize">40sp</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:textColor">#4C4F4C</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+</resources>

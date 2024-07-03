@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.busanit.mentalcareandroid.RetrofitClient
 import com.busanit.mentalcareandroid.adapter.ViewPagerAdapter
 import com.busanit.mentalcareandroid.databinding.ActivityMainBinding
 import com.busanit.mentalcareandroid.model.Test
@@ -17,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        RetrofitClient.initialize(this)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

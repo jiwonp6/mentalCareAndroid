@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.busanit.mentalcareandroid.RetrofitClient
 import com.busanit.mentalcareandroid.databinding.ActivityLoginBinding
 import com.busanit.mentalcareandroid.model.McUserLogin
 import com.busanit.mentalcareandroid.model.McUserLoginSuccess
@@ -16,9 +15,9 @@ class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        RetrofitClient.initialize(this)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         // 로그인 버튼 클릭했을 때 이벤트
         binding.buttonLogin.setOnClickListener {
@@ -57,7 +56,7 @@ class LoginActivity : AppCompatActivity() {
                     val sharedPreferences =
                         getSharedPreferences("app_pref", MODE_PRIVATE)
                     sharedPreferences.edit()
-                        .putString("token", token)                                // 토큰
+                        .putString("access_token", token)                         // 토큰
                         .putString("userId", userId)                              // 사용자 이름
                         .putString("userNickname", response.body()?.userNickname) // 사용자 닉네임
                         .apply()

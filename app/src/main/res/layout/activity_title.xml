@@ -1,34 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:clipToOutline="true"
     tools:context=".activity.TitleActivity">
 
+    <RelativeLayout
+        android:id="@+id/mobile_stat"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#FFFFFF"
+        android:clipToOutline="true" />
+
+    <View
+        android:id="@+id/tempimagett"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/title_background_img"
+        />
+
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/now_take_ca"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        android:text="Now Take Care Of Your Mental Health" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="260dp"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="-2sp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="@string/explain"
+        android:textAppearance="@style/explain"
+        android:fontFamily="@font/dm_serif_display"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-        <Button
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="500dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RelativeLayout
             android:id="@+id/buttonLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="로그인" />
-        <Button
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_prim"
+            android:elevation="2dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center_vertical"
+                android:lineSpacingExtra="4sp"
+                android:text="로그인"
+                android:textSize="20dp"
+                android:fontFamily="@font/do_hyeon"
+                android:textAppearance="@style/title" />
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/buttonRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="회원가입" />
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_prim"
+            android:elevation="2dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center_vertical"
+                android:lineSpacingExtra="4sp"
+                android:text="회원가입"
+                android:textSize="20dp"
+                android:fontFamily="@font/do_hyeon"
+                android:textAppearance="@style/title" />
+        </RelativeLayout>
     </LinearLayout>
-</LinearLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/home_indica"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
+
+
+

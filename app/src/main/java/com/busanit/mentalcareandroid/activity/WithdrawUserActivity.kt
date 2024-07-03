@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.busanit.mentalcareandroid.RetrofitClient
 import com.busanit.mentalcareandroid.databinding.ActivityWithdrawUserBinding
 import com.busanit.mentalcareandroid.model.McUser
 import com.busanit.mentalcareandroid.model.McUserLogin
@@ -23,6 +22,7 @@ class WithdrawUserActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        RetrofitClient.initialize(this)
         binding = ActivityWithdrawUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

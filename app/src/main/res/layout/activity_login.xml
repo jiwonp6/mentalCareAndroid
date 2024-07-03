@@ -1,65 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="32dp"
+    android:background="#FFFFFF"
+    android:clipToOutline="true"
     tools:context=".activity.LoginActivity">
 
+    <RelativeLayout
+        android:id="@+id/mobile_stat"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#FFFFFF"
+        android:clipToOutline="true" />
+
     <TextView
+        android:id="@+id/mentalcare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="로그인"
-        android:textSize="32sp"
-        android:textStyle="bold" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:fontFamily="@font/dm_serif_display"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/mentalcare"
+        android:textAppearance="@style/mentalcare" />
 
-    <EditText
-        android:id="@+id/EditTextUserId"
+    <RelativeLayout
+        android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:hint="사용자이름(ID)를 입력하세요"
-        android:inputType="text" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:padding="40dp">
 
-    <EditText
-        android:id="@+id/EditTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:hint="비밀번호를 입력하세요"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="로그인" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/buttonFindUserId"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/input_and_b"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="아이디 찾기" />
-        <Button
-            android:id="@+id/buttonFindUserPw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="비밀번호 찾기" />
-        <Button
-            android:id="@+id/buttonRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="회원가입" />
-    </LinearLayout>
-</LinearLayout>
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="163dp"
+                android:layout_height="55dp"
+                android:background="@drawable/login_title"
+                android:fontFamily="@font/do_hyeon"
+                android:gravity="center_horizontal|center_vertical"
+                android:lineSpacingExtra="2sp"
+                android:text="@string/login_title"
+                android:textAppearance="@style/login_title"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/EditTextUserId"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:background="@drawable/field"
+                android:fontFamily="@font/do_hyeon"
+                android:hint="아이디"
+                android:paddingLeft="30dp" />
+
+            <EditText
+                android:id="@+id/EditTextPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:background="@drawable/field"
+                android:fontFamily="@font/do_hyeon"
+                android:hint="비밀번호"
+                android:paddingLeft="30dp" />
+
+            <RelativeLayout
+                android:id="@+id/buttonLogin"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/button"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/some_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/do_hyeon"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="2sp"
+                    android:text="@string/login_title"
+                    android:textAppearance="@style/login_title"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/buttonFindUserId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:fontFamily="@font/do_hyeon"
+                    android:text="아이디 찾기"
+                    android:textAppearance="@style/findId" />
+
+                <TextView
+                    android:id="@+id/buttonFindUserPw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:fontFamily="@font/do_hyeon"
+                    android:text="비밀번호 찾기"
+                    android:textAppearance="@style/findId" />
+
+                <TextView
+                    android:id="@+id/buttonRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:fontFamily="@font/do_hyeon"
+                    android:text="회원가입"
+                    android:textAppearance="@style/findId" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

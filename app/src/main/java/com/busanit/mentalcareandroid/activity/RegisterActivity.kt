@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.busanit.mentalcareandroid.R
-import com.busanit.mentalcareandroid.RetrofitClient
 import com.busanit.mentalcareandroid.databinding.ActivityRegisterBinding
 import com.busanit.mentalcareandroid.model.McUser
 import retrofit2.Call
@@ -20,6 +19,7 @@ class RegisterActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        RetrofitClient.initialize(this)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

@@ -77,11 +77,11 @@ interface ApiService {
 
     // 감정일지 수정
     @PUT("/emotionDiary/updateEmotionDiary")
-    fun updateEmotionDiary(@Query("userId") id: String, @Body emotionDiary: EmotionDiary): Call<EmotionDiary>
+    fun updateEmotionDiary(@Query("userId") id: String, @Query("edDate") edDate: String, @Body emotionDiary: EmotionDiary): Call<EmotionDiary>
 
     // 감정일지 삭제
     @PUT("/emotionDiary/deleteEmotionDiary")
-    fun deleteEmotionDiary(@Query("userId") id: String, @Query("edId") edId: Long): Call<Integer>
+    fun deleteEmotionDiary(@Query("userId") id: String, @Query("edDate") edDate: String): Call<Int>
 
     // 감정 태그 list
     @GET("/emotion/AllEmotions")

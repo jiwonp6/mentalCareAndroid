@@ -1,120 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<!-- Auto layout, variables, and unit scale are not yet supported -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:clipToOutline="true"
     tools:context=".fragment.HomeFragment">
 
-    <LinearLayout
-        android:id="@+id/homeBar"
+    <RelativeLayout
+        android:id="@+id/mobile_stat"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#FFFFFF"
+        android:clipToOutline="true" />
+
+    <RelativeLayout
+        android:id="@+id/home_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:padding="20dp">
 
         <LinearLayout
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/cheerUpMsg"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GoGo!" />
+                android:orientation="vertical">
+                <!-- Auto layout, variables, and unit scale are not yet supported -->
+                <TextView
+                    android:id="@+id/cheerUpMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_serif_display"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="-3sp"
+                    android:text="You've got this!"
+                    android:textAppearance="@style/home_title" />
 
-            <TextView
-                android:id="@+id/TextViewNickname"
-                android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/TextViewNickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_serif_display"
+                    android:text="UsersNickName"
+                    android:textAppearance="@style/home_nickName" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/popUpMenu"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="닉네임" />
+                android:text="menu" />
         </LinearLayout>
+    </RelativeLayout>
 
-        <Button
-            android:id="@+id/popUpMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="menu" />
-    </LinearLayout>
-
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/homeContents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp">
 
-        <TextView
+        <RelativeLayout
             android:id="@+id/today"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="today" />
+            android:elevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:padding="10dp"
+                android:background="@drawable/today"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="today"
+                    android:fontFamily="@font/dm_serif_display"
+                    android:textSize="20dp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"/>
 
-        <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="170dp"
+                        android:text="DATE"
+                        android:textSize="40dp"
+                        android:fontFamily="@font/dm_serif_display" />
+
+                    <TextView
+                        android:id="@+id/dayOfTheWeek"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SUN"
+                        android:textSize="40dp"
+                        android:fontFamily="@font/dm_serif_display"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
+            android:layout_marginTop="150dp">
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="30dp"
-                android:padding="5dp"
-                android:text="01 01" />
+                android:orientation="horizontal"
+                android:gravity="center">
+                <LinearLayout
+                    android:id="@+id/stress"
+                    android:layout_width="170dp"
+                    android:layout_height="230dp"
+                    android:background="@drawable/stress_field"
+                    android:elevation="4dp"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/do_hyeon"
+                        android:text="스트레스 지수"
+                        android:padding="10dp"
+                        android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/dayOfTheWeek"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30dp"
-                android:padding="5dp"
-                android:text="SUN" />
-        </LinearLayout>
+                    <TextView
+                        android:id="@+id/stressData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:text="stress score"
+                        android:fontFamily="@font/do_hyeon" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/sleep"
+                    android:layout_width="170dp"
+                    android:layout_height="230dp"
+                    android:background="@drawable/stress_field"
+                    android:elevation="4dp"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/do_hyeon"
+                        android:text="수면 지수"
+                        android:padding="10dp"
+                        android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/stressData"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="stress" />
+                    <TextView
+                        android:id="@+id/sleepData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:text="sleep score"
+                        android:fontFamily="@font/do_hyeon" />
 
-            <TextView
-                android:id="@+id/sleepData"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="sleep" />
-        </LinearLayout>
+                </LinearLayout>
 
-        <LinearLayout
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout
             android:id="@+id/emotionDiary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="400dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/today"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="오늘의 감정일지"
+                    android:fontFamily="@font/do_hyeon"
+                    android:textSize="20dp"/>
+                    <TextView
+                        android:id="@+id/emotionDiaryTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="170dp"
+                        android:text="Tag"
+                        android:textSize="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/do_hyeon" />
+                    <TextView
+                        android:id="@+id/emotionDiaryContent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="아직 추가된 오늘의 감정일지가 없습니다."
+                        android:textSize="20dp"
+                        android:fontFamily="@font/do_hyeon"/>
 
-            <TextView
-                android:id="@+id/emotionDiaryTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="오늘의 감정일지" />
-            <TextView
-                android:id="@+id/emotionDiaryTag"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"/>
-            <TextView
-                android:id="@+id/emotionDiaryContent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="아직 추가된 오늘의 감정일지가 없습니다." />
-        </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

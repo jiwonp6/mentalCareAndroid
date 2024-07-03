@@ -7,9 +7,36 @@
     android:layout_height="match_parent"
     tools:context=".activity.UpdateEmotionDiaryActivity"
     android:orientation="vertical">
+
     <TextView
         android:text="감정일지 수정"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/emotionList"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:spanCount="7" />
+
+    <EditText
+        android:id="@+id/EditTextReason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="6"
+        android:minLines="4"
+        android:maxLines="10"
+        android:hint="오늘의 하루는 어땠나요?"
+        android:inputType="textMultiLine" />
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="수정" />
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="삭제" />
 </LinearLayout>

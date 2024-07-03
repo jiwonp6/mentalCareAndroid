@@ -17,8 +17,6 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
 import com.busanit.mentalcareandroid.R
-import com.busanit.mentalcareandroid.RetrofitClient
-import com.busanit.mentalcareandroid.activity.EmotionDiaryActivity
 import com.busanit.mentalcareandroid.activity.MonthlyActivity
 import com.busanit.mentalcareandroid.activity.TitleActivity
 import com.busanit.mentalcareandroid.activity.UpdateUserActivity
@@ -41,6 +39,7 @@ class HomeFragment : Fragment() {
     private lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        activity?.let { RetrofitClient.initialize(it) }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -73,6 +72,7 @@ class HomeFragment : Fragment() {
             
             // 데이터 정보
             val userId = sharedPreferences.getString("userId", null)
+            Log.d("mylog", "onCreateView: ${userId}")
             userId?.let { setUserStressData(it) }
             userId?.let { setUserSleepData(it) }
 

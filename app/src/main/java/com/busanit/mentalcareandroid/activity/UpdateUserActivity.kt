@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.busanit.mentalcareandroid.RetrofitClient
 import com.busanit.mentalcareandroid.databinding.ActivityUpdateUserBinding
 import com.busanit.mentalcareandroid.model.McUser
 import com.busanit.mentalcareandroid.model.McUserLogin
@@ -23,6 +22,7 @@ class UpdateUserActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        RetrofitClient.initialize(this)
         binding = ActivityUpdateUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -98,23 +98,6 @@ class UpdateUserActivity : AppCompatActivity() {
                     .show()
                 return@setOnClickListener
             }
-
-//            // 변경하지 않는 경우 원래 정보로 세팅
-//            if (userPwNew.equals(null) || userPwNew.trim().equals("")) {
-//                userPwNew = userPw
-//            }
-//            if (userNickname.equals(null) || userNickname.trim().equals("")) {
-//                userNickname = response.body()?.userNickname!!
-//            }
-//            if (userBirth.equals(null) || userBirth.trim().equals("")) {
-//                userBirth = response.body()?.userBirth!!
-//            }
-//            if (userEmail.equals(null) || userEmail.trim().equals("")) {
-//                userEmail = response.body()?.userEmail!!
-//            }
-//            if (userPhonenumber.equals(null) || userPhonenumber.trim().equals("")) {
-//                userPhonenumber = response.body()?.userPhonenumber!!
-//            }
 
             // 받은 정보로 객체 생성
             val user = McUserUpdate(
