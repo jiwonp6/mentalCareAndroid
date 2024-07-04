@@ -1,5 +1,6 @@
 package com.busanit.mentalcareandroid.activity
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -22,11 +23,14 @@ class CommentDetailActivity : AppCompatActivity() {
     lateinit var binding : ActivityCommentDetailBinding
     lateinit var childrenComments : List<ChildrenComment>
     lateinit var childrenAdapter: ChildrenAdapter
+    lateinit var sharedPreferences : SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCommentDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        sharedPreferences = getSharedPreferences("app_pref", MODE_PRIVATE)
 
         binding.commentContent.text = intent.getStringExtra("commentContent")
         binding.commentTime.text = intent.getStringExtra("commentTime")
@@ -59,7 +63,8 @@ class CommentDetailActivity : AppCompatActivity() {
 
         binding.commentButton.setOnClickListener {
             val childrenContent = binding.commentContentWrite.text.toString()
-            val newChildren = NewChildren(childrenContent, "희동이", commentId)
+            val userNickname = sharedPreferences.getString("userNickname", null).toString()
+            val newChildren = NewChildren(childrenContent, userNickname, commentId)
 
             RetrofitClient.api.createChildren(newChildren).enqueue(object :
                 Callback<ChildrenComment> {

@@ -2,7 +2,6 @@ package com.busanit.mentalcareandroid.model
 
 import java.time.LocalDate
 
-
 data class McUser(
     val userId: String,
     val userPw: String,

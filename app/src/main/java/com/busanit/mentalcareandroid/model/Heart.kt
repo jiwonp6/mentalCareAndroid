@@ -1,7 +1,7 @@
 package com.busanit.mentalcareandroid.model
 
 data class Heart(
-    val userId : Long
+    val userId : String
 )
 
 data class HeartResponse(

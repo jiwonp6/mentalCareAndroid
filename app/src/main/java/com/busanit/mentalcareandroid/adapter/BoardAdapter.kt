@@ -1,6 +1,7 @@
 package com.busanit.mentalcareandroid.adapter
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.busanit.mentalcareandroid.activity.BoardDetailActivity
+import com.busanit.mentalcareandroid.activity.WriteActivity
 import com.busanit.mentalcareandroid.databinding.BoardItemBinding
 import com.busanit.mentalcareandroid.diff.DiffUtilCallback
 import com.busanit.mentalcareandroid.model.Board
@@ -19,11 +21,11 @@ private const val TAG = "BoardAdapter"
 class BoardAdapter(val activityResultLauncher: ActivityResultLauncher<Intent>) :
     RecyclerView.Adapter<BoardAdapter.ItemViewHolder>() {
     private val boards = mutableListOf<Board>()
+    lateinit var sharedPreferences: SharedPreferences
 
     // 매개변수로 항목을 레이아웃 뷰 바인딩을 삽입
     inner class ItemViewHolder(val binding: BoardItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
         @RequiresApi(Build.VERSION_CODES.O)
         fun bind(board: Board) {
             binding.boardTitle.text = board.boardTitle

@@ -1,5 +1,6 @@
 package com.busanit.mentalcareandroid.activity
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -21,11 +22,13 @@ class WriteActivity : AppCompatActivity() {
     lateinit var binding: ActivityWriteBinding
     lateinit var boards: List<Board>
     lateinit var boardAdapter: BoardAdapter
+    lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityWriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        sharedPreferences = getSharedPreferences("app_pref", MODE_PRIVATE)
 
 
 
@@ -41,7 +44,8 @@ class WriteActivity : AppCompatActivity() {
                     R.id.cheeringButton -> tag = "CHEERING"
                 }
 
-                val newBoard = NewBoard(tag, title, content, "희동이")
+                val userNickname = sharedPreferences.getString("userNickname", null)
+                val newBoard = NewBoard(tag, title, content, userNickname.toString())
                 boards = mutableListOf()
 
                 RetrofitClient.api.createBoard(newBoard).enqueue(object : Callback<Board> {

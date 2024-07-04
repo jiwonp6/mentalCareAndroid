@@ -3,6 +3,7 @@ package com.busanit.mentalcareandroid.activity
 import RetrofitClient
 import android.app.Activity
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -25,6 +26,7 @@ class BoardDetailActivity : AppCompatActivity() {
     lateinit var binding: ActivityBoardDetailBinding
     lateinit var commentAdapter: CommentAdapter
     lateinit var comments: List<Comment>
+    lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +36,7 @@ class BoardDetailActivity : AppCompatActivity() {
         // 어댑터에서 데이터 받아오기
         val boardId = intent.getLongExtra("boardId", -1)
         val boardTitle = intent.getStringExtra("boardTitle")
-        val userNickName = intent.getStringExtra("userNickname")
+        val userNickName = sharedPreferences.getString("userNickname", null).toString()
         val boardTime = intent.getStringExtra("boardTime")
         val boardContent = intent.getStringExtra("boardContent")
         val heartCount = intent.getIntExtra("heartCount", 0)
@@ -69,8 +71,10 @@ class BoardDetailActivity : AppCompatActivity() {
 
         // 하트 클릭시 공감 버튼 활성화
         binding.heart.setOnClickListener {
+            sharedPreferences = getSharedPreferences("app_pref", MODE_PRIVATE)
+            val userId = sharedPreferences.getString("userId", null)
             // 객체 생성
-            val heart = Heart(1)
+            val heart = Heart(userId.toString())
 
             // 공감 생성 및 취소를 위한 api
             RetrofitClient.api.upAndDownHeart(heart, boardId)
@@ -94,7 +98,7 @@ class BoardDetailActivity : AppCompatActivity() {
         binding.commentButton.setOnClickListener {
             // 댓글 입력을 위한 데이터 받기 + 새로운 객체 생성
             val commentContent = binding.commentContent.text.toString()
-            val newComment = NewComment(commentContent, "마이콜", boardId)
+            val newComment = NewComment(commentContent, userNickName.toString(), boardId)
 
             // 댓글 추가를 위한 api
             RetrofitClient.api.createComment(newComment).enqueue(object : Callback<Comment> {
