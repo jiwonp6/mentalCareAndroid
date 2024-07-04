@@ -9,10 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.busanit.mentalcareandroid.R
 import com.busanit.mentalcareandroid.model.Emotion
 
-class RecyclerViewAdapter(
+class EmotionRecyclerViewAdapter(
     private val emotionList: List<Emotion>,
     private val itemClickListener: OnItemClickListener
-) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<EmotionRecyclerViewAdapter.ViewHolder>() {
 
     private var selectedPosition = RecyclerView.NO_POSITION
 

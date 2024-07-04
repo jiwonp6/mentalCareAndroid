@@ -2,7 +2,6 @@ package com.busanit.mentalcareandroid.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.busanit.mentalcareandroid.databinding.ActivityTitleBinding
 
@@ -38,6 +37,6 @@ class TitleActivity : AppCompatActivity() {
     // sharedPreferences 에서 토큰 가져오는 함수
     private fun getToken(): String {
         val sharedPreferences = getSharedPreferences("app_pref", MODE_PRIVATE)
-        return sharedPreferences.getString("token", null) ?: ""
+        return sharedPreferences.getString("access_token", null) ?: ""
     }
 }
