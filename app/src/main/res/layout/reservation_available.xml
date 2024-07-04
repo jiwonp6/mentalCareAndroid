@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="오전"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="15dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="351dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="10sp">
+
+        <TextView
+            android:id="@+id/oclock9"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_border"
+            android:gravity="center"
+            android:text="9:00"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="490dp" />
+
+        <TextView
+            android:id="@+id/oclock10"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_border"
+            android:gravity="center"
+            android:text="10:00"
+            tools:layout_editor_absoluteX="109dp"
+            tools:layout_editor_absoluteY="490dp" />
+
+        <TextView
+            android:id="@+id/oclock11"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_border"
+            android:gravity="center"
+            android:text="11:00"
+            tools:layout_editor_absoluteX="224dp"
+            tools:layout_editor_absoluteY="490dp" />
+
+        <TextView
+            android:id="@+id/oclock0"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            tools:layout_editor_absoluteX="224dp"
+            tools:layout_editor_absoluteY="490dp" />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="오후"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="15dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="351dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="10sp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="59dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/oclock1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
+                android:gravity="center"
+                android:text="1:00"
+                tools:layout_editor_absoluteX="51dp"
+                tools:layout_editor_absoluteY="490dp" />
+
+            <TextView
+                android:id="@+id/oclock2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
+                android:gravity="center"
+                android:text="2:00"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="490dp" />
+
+            <TextView
+                android:id="@+id/oclock3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
+                android:gravity="center"
+                android:text="3:00"
+                tools:layout_editor_absoluteX="224dp"
+                tools:layout_editor_absoluteY="490dp" />
+
+            <TextView
+                android:id="@+id/oclock4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
+                android:gravity="center"
+                android:text="4:00"
+                tools:layout_editor_absoluteX="282dp"
+                tools:layout_editor_absoluteY="490dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="171dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/oclock5"
+                android:layout_width="7dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
+                android:gravity="center"
+                android:text="5:00"
+                tools:layout_editor_absoluteX="282dp"
+                tools:layout_editor_absoluteY="490dp" />
+
+            <TextView
+                android:id="@+id/oclock6"
+                android:layout_width="8dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
+                android:gravity="center"
+                android:text="6:00"
+                tools:layout_editor_absoluteX="167dp"
+                tools:layout_editor_absoluteY="490dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/finishReservation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#7A7979"
+        android:text="예약"
+        android:textColor="@color/white" />
+
+
+</LinearLayout>
