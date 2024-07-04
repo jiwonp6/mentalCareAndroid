@@ -24,7 +24,9 @@
         android:layout_marginTop="20sp" />
 
     <ImageView
+        android:id="@+id/hospitalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="TODO"
         android:src="@drawable/hospital"/>
 </LinearLayout>

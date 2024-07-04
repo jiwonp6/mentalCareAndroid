@@ -1,5 +1,7 @@
 package com.busanit.mentalcareandroid.reservation
 
+import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.busanit.mentalcareandroid.R
 import com.busanit.mentalcareandroid.databinding.MyReservationBinding
 import com.busanit.mentalcareandroid.databinding.MyReservationItemBinding
+import com.busanit.mentalcareandroid.hospital.HospitalActivity
 import com.busanit.mentalcareandroid.service.ApiService
 import retrofit2.Call
 import retrofit2.Callback
@@ -39,13 +42,17 @@ class MyReservationActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
 
 
-
+        sharedPreferences = getSharedPreferences("app_pref", Context.MODE_PRIVATE)
         val userId = sharedPreferences.getString("userId", null)  // 하드코딩 유저 아이디
         val reservationId = intent.getLongExtra("reservationId", 0)
         val api = RetrofitClient.api
         Log.d(TAG, "onCreate: reservationId : ${reservationId}")
 
         getReservationByUserIdApi(api, userId!!)
+
+        binding.hospitalButton.setOnClickListener{
+            startActivity(Intent(this@MyReservationActivity, HospitalActivity::class.java))
+        }
 
     }
 

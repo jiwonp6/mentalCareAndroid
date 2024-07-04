@@ -1,5 +1,6 @@
 package com.busanit.mentalcareandroid.reservation
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
@@ -67,6 +68,8 @@ class BottomSheetFragmentReservationAvail : BottomSheetDialogFragment() {
                 val reservationDate = LocalDate.of(year, month, dayOfMonth )
                 val reservationTime = LocalTime.of(time,0)
 
+                sharedPreferences =
+                    context?.getSharedPreferences("app_pref", Context.MODE_PRIVATE)!!
                 val userId = sharedPreferences.getString("userId", null)  // 하드코딩 유저 아이디
                 val reservation = Reservation(null, userId, reservationDate, reservationTime,  hospitalId, null, null)
                 Log.d(TAG, "onViewCreated: ${reservation}")
