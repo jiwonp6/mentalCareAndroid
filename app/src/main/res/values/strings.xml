@@ -3,12 +3,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-<!--title-->
+    <!--title-->
     <string name="explain">
         Now\nTake Care Of\nYour\nMental Health
     </string>
 
-<!--login-->
+    <!--login-->
     <string name="mentalcare">
         MentalCare
     </string>

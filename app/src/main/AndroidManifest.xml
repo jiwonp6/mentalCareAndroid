@@ -16,6 +16,15 @@
         android:theme="@style/Theme.MentalCareAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".activity.BoardDetailctivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".activity.UpdateEmotionDiaryActivity"
             android:exported="true">
             <intent-filter>
