@@ -8,39 +8,10 @@
     tools:context=".activity.MainActivity"
     android:orientation="vertical"
     android:background="#FFFFFF"
-    android:paddingTop="8dp"
+    android:paddingTop="20dp"
     android:paddingLeft="20dp"
     android:paddingRight="20dp">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clipToOutline="true"
-        android:background="#FFFFFF">
-
-        <ImageView
-            android:id="@+id/right_side"
-            android:layout_width="80dp"
-            android:layout_height="20dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="17dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="17.33dp"
-            android:src="@drawable/right_side"
-            />
-
-        <ImageView
-            android:id="@+id/time"
-            android:layout_width="60dp"
-            android:layout_height="20dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="17dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="17dp"
-            android:src="@drawable/time"
-            />
-
-    </RelativeLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
