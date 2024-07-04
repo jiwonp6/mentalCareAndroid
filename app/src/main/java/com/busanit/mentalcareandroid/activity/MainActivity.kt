@@ -42,6 +42,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, MainActivity::class.java))
         }
 
+        //board
+        binding.board.setOnClickListener {
+            startActivity(Intent(this@MainActivity, CommunityMainActivity::class.java))
+        }
+
     }
 
     // 보호된 자원 네트워크 요청 함수 : 403 번 (금지된 응답 Forbidden, 자원 확인 불가), 토큰과 함께 요청 => 200번 Ok
