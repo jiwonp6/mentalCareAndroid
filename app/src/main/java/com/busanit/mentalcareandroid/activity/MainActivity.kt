@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.busanit.mentalcareandroid.adapter.ViewPagerAdapter
 import com.busanit.mentalcareandroid.databinding.ActivityMainBinding
 import com.busanit.mentalcareandroid.fragment.HomeFragment
+import com.busanit.mentalcareandroid.hospital.HospitalActivity
 import com.busanit.mentalcareandroid.model.Test
 import com.google.android.material.tabs.TabLayoutMediator
 import retrofit2.Call
@@ -40,6 +41,9 @@ class MainActivity : AppCompatActivity() {
         // home
         binding.home.setOnClickListener {
             startActivity(Intent(this@MainActivity, MainActivity::class.java))
+        }
+        binding.hospital.setOnClickListener{
+            startActivity(Intent(this@MainActivity, HospitalActivity::class.java))
         }
 
     }
