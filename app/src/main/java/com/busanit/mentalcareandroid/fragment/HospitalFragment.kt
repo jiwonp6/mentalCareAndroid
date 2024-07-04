@@ -34,7 +34,7 @@ import java.time.format.DateTimeFormatter
 import java.time.format.TextStyle
 import java.util.Locale
 
-class HomeFragment : Fragment() {
+class HospitalFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     private lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {

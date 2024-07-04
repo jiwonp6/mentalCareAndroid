@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:clipToOutline="true"
-    tools:context=".fragment.HomeFragment">
+    tools:context=".fragment.HospitalFragment">
 
     <RelativeLayout
         android:id="@+id/mobile_stat"
