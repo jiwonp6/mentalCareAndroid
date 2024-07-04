@@ -1,5 +1,6 @@
 package com.busanit.mentalcareandroid.reservation
 
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -23,6 +24,7 @@ class MyReservationActivity : AppCompatActivity() {
     lateinit var binding: MyReservationBinding
     lateinit var binding1: MyReservationItemBinding
     lateinit var adapter: MyReservationAdapter
+    lateinit var sharedPreferences: SharedPreferences
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         binding= MyReservationBinding.inflate(layoutInflater)
@@ -38,12 +40,12 @@ class MyReservationActivity : AppCompatActivity() {
 
 
 
-        val userId = "a"  // 하드코딩 유저 아이디
+        val userId = sharedPreferences.getString("userId", null)  // 하드코딩 유저 아이디
         val reservationId = intent.getLongExtra("reservationId", 0)
         val api = RetrofitClient.api
         Log.d(TAG, "onCreate: reservationId : ${reservationId}")
 
-        getReservationByUserIdApi(api, userId)
+        getReservationByUserIdApi(api, userId!!)
 
     }
 
