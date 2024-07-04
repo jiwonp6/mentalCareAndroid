@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/dm_serif_display"
         android:gravity="center_horizontal|center_vertical"
         android:lineSpacingExtra="4sp"
@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="200dp"
         android:padding="40dp">
 
         <LinearLayout
@@ -73,6 +73,7 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/do_hyeon"
                 android:hint="비밀번호"
+                android:inputType="textPassword"
                 android:paddingLeft="30dp" />
 
             <RelativeLayout
@@ -80,7 +81,7 @@
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/button"
+                android:background="@drawable/button_main"
                 android:gravity="center">
 
                 <TextView

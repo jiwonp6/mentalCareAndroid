@@ -106,7 +106,7 @@ class MonthlyActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         response.body()?.let { binding.stressData.setText(it.stdAvg.toString()) }
                     } else {
-                        binding.stressData.text = "측정된 데이터가 없습니다."
+                        binding.stressData.text = "None"
                     }
                 }
 
@@ -124,7 +124,7 @@ class MonthlyActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         response.body()?.let { binding.sleepData.setText(it.sldAvg.toString()) }
                     } else {
-                        binding.sleepData.text = "측정된 데이터가 없습니다."
+                        binding.sleepData.text = "None"
                     }
                 }
 

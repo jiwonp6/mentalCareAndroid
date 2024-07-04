@@ -39,7 +39,7 @@ class RecyclerViewAdapter(
 
         // 아이템 배경색 변경
         if (selectedPosition == position) {
-            holder.container.setBackgroundColor(Color.parseColor("#FFEB3B")) // 선택된 색
+            holder.container.setBackgroundColor(Color.parseColor("#81BF80")) // 선택된 색
         } else {
             holder.container.setBackgroundColor(Color.parseColor("#FFFFFF")) // 원래 색
         }

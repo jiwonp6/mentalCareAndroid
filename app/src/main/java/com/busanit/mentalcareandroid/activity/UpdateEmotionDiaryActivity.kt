@@ -73,7 +73,7 @@ class UpdateEmotionDiaryActivity : AppCompatActivity(), RecyclerViewAdapter.OnIt
     private fun setOriginInfo(userId: String, date: String) {
         RetrofitClient.api.getSelectedDateEmotionDiary(userId, date).enqueue(object : Callback<EmotionDiary> {
             override fun onResponse(call: Call<EmotionDiary>, response: Response<EmotionDiary>) {
-                Log.d("mylog", "원 정보->onResponse: ${response.body()}")
+                Log.d("mylog", "!!!onResponse: ${response.body()}")
                 if (response.isSuccessful) {
                     response.body()?.let { originEmotionDiary ->
                         binding.EditTextReason.setText(originEmotionDiary.edReason)
@@ -95,9 +95,11 @@ class UpdateEmotionDiaryActivity : AppCompatActivity(), RecyclerViewAdapter.OnIt
     private fun emotionList(selectedEmotionId: Long) {
         RetrofitClient.api.getEmotionList().enqueue(object : Callback<List<Emotion>> {
             override fun onResponse(call: Call<List<Emotion>>, response: Response<List<Emotion>>) {
+                Log.d("mylog", "onResponse: ${selectedEmotionId}")
                 if (response.isSuccessful) {
                     response.body()?.let { emotionList ->
                         val adapter = RecyclerViewAdapter(emotionList, this@UpdateEmotionDiaryActivity)
+
                         adapter.setSelectedEmotionId(selectedEmotionId)
                         binding.emotionList.adapter = adapter
                         binding.emotionList.layoutManager = GridLayoutManager(this@UpdateEmotionDiaryActivity, 4, GridLayoutManager.HORIZONTAL, false)
@@ -143,7 +145,6 @@ class UpdateEmotionDiaryActivity : AppCompatActivity(), RecyclerViewAdapter.OnIt
     private fun deleteEmotionDiary(userId: String, date: String) {
         RetrofitClient.api.deleteEmotionDiary(userId, date).enqueue(object : Callback<Int> {
             override fun onResponse(call: Call<Int>, response: Response<Int>) {
-                Log.d("mylog", "삭제->onResponse: ${response.body()}")
                 if (response.isSuccessful) {
                     response.body()?.let { num -> num > 0
                         Toast.makeText(this@UpdateEmotionDiaryActivity, "감정 일지를 삭제하였습니다.", Toast.LENGTH_SHORT).show()

@@ -1,104 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.UpdateUserActivity"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="32dp">
+    android:background="#FFFFFF"
+    android:clipToOutline="true"
+    android:id="@+id/main"
+    tools:context=".activity.UpdateUserActivity">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <EditText
-        android:id="@+id/EditTextPassword"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:layout_marginRight="15dp"
-        android:hint="현재 비밀번호를 입력하세요"
-        android:inputType="textPassword" />
+    <RelativeLayout
+        android:id="@+id/mobile_stat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#FFFFFF"
+        android:clipToOutline="true" />
 
-    <Button
-        android:id="@+id/buttonCheckedPw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="확인"/>
-</LinearLayout>
-
-
-    <EditText
-        android:id="@+id/EditTextNewPassword"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:hint="새로운 비밀번호를 입력하세요"
-        android:inputType="textPassword" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp">
 
-    <EditText
-        android:id="@+id/EditTextNickname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:hint="변경할 닉네임을 입력하세요"
-        android:inputType="text" />
-
-    <RadioGroup
-        android:id="@+id/UserGender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/male"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/content1"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="남"/>
+            android:orientation="vertical">
 
-        <RadioButton
-            android:id="@+id/female"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/mentalcare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="25dp"
+                android:fontFamily="@font/dm_serif_display"
+                android:gravity="center_horizontal|center_vertical"
+                android:lineSpacingExtra="3sp"
+                android:text="@string/mentalcare"
+                android:textAppearance="@style/mentalcare" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="163dp"
+                android:layout_height="55dp"
+                android:background="@drawable/login_title"
+                android:fontFamily="@font/do_hyeon"
+                android:gravity="center_horizontal|center_vertical"
+                android:lineSpacingExtra="2sp"
+                android:text="회원정보수정"
+                android:textAppearance="@style/login_title"
+                android:textSize="20dp" />
+            <EditText
+                android:id="@+id/EditTextPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:background="@drawable/field"
+                android:fontFamily="@font/do_hyeon"
+                android:hint="현재 비밀번호"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/EditTextNewPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:background="@drawable/field"
+                android:fontFamily="@font/do_hyeon"
+                android:hint="변경 비밀번호\n영문, 숫자, 특수문자 모두 포함 8~20자리"
+                android:padding="10dp" />
+
+            <RelativeLayout
+                android:id="@+id/buttonCheckedPw"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_main"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/do_hyeon"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="2sp"
+                    android:text="비밀번호확인"
+                    android:textAppearance="@style/login_title"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="380dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp">
+
+        <LinearLayout
+            android:id="@+id/content2"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="여"/>
+            android:orientation="vertical">
 
-        <RadioButton
-            android:id="@+id/none"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="none"/>
-    </RadioGroup>
+            <EditText
+                android:id="@+id/EditTextNickname"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:background="@drawable/field"
+                android:fontFamily="@font/do_hyeon"
+                android:hint="변경 닉네임"
+                android:padding="10dp" />
 
-    <EditText
-        android:id="@+id/EditTextBirth"
+            <RadioGroup
+                android:id="@+id/UserGender"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:background="@drawable/field"
+                android:fontFamily="@font/do_hyeon"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <RadioButton
+                    android:id="@+id/male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="남" />
+
+                <RadioButton
+                    android:id="@+id/female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="여" />
+
+                <RadioButton
+                    android:id="@+id/none"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:padding="10dp"
+                    android:text="none" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/EditTextBirth"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:background="@drawable/field"
+                android:fontFamily="@font/do_hyeon"
+                android:hint="변경 생년월일"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/EditTextEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:background="@drawable/field"
+                android:fontFamily="@font/do_hyeon"
+                android:hint="변경 이메일"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/EditTextPhonenumber"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:background="@drawable/field"
+                android:fontFamily="@font/do_hyeon"
+                android:hint="변경 전화번호"
+                android:padding="10dp" />
+
+            <RelativeLayout
+                android:id="@+id/buttonUpdateUser"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_main"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/do_hyeon"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="2sp"
+                    android:text="회원정보변경"
+                    android:textAppearance="@style/login_title"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/home_indica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:hint="변경할 생년월일을 입력하세요"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/EditTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:hint="변경할 이메일 주소를 입력하세요"
-        android:inputType="textWebEmailAddress" />
-
-    <EditText
-        android:id="@+id/EditTextPhonenumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:hint="변경할 전화번호를 입력하세요"
-        android:inputType="phone" />
-
-    <Button
-        android:id="@+id/buttonUpdateUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="회원 정보 변경" />
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

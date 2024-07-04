@@ -1,42 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.UpdateEmotionDiaryActivity"
-    android:orientation="vertical">
+    android:background="#FFFFFF"
+    android:clipToOutline="true"
+    tools:context=".activity.UpdateEmotionDiaryActivity">
 
-    <TextView
-        android:text="감정일지 수정"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/emotionList"
+    <RelativeLayout
+        android:id="@+id/mobile_stat"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:spanCount="7" />
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#FFFFFF"
+        android:clipToOutline="true" />
 
-    <EditText
-        android:id="@+id/EditTextReason"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:lines="6"
-        android:minLines="4"
-        android:maxLines="10"
-        android:hint="오늘의 하루는 어땠나요?"
-        android:inputType="textMultiLine" />
-    <Button
-        android:id="@+id/buttonUpdate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp">
+
+        <LinearLayout
+            android:id="@+id/content1"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/mentalcare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="25dp"
+                android:fontFamily="@font/do_hyeon"
+                android:gravity="center_horizontal|center_vertical"
+                android:lineSpacingExtra="3sp"
+                android:text="감정일지수정"
+                android:textSize="30dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/emotionList"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:spanCount="7" />
+        </LinearLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/emotionDiary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="수정" />
-    <Button
-        android:id="@+id/buttonDelete"
+        android:layout_marginTop="400dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="20dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/today"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="오늘의 감정일지"
+                android:fontFamily="@font/do_hyeon"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/EditTextReason"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="아직 추가된 오늘의 감정일지가 없습니다."
+                android:textSize="20dp"
+                android:fontFamily="@font/do_hyeon"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/emotionDiaryButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="삭제" />
-</LinearLayout>
+        android:layout_marginTop="600dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+            <Button
+                android:id="@+id/buttonUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="수정"
+                android:backgroundTint="#81BF80"
+                android:fontFamily="@font/do_hyeon"
+                android:textSize="18dp"/>
+            <Button
+                android:id="@+id/buttonDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="삭제"
+                android:backgroundTint="#81BF80"
+                android:fontFamily="@font/do_hyeon"
+                android:textSize="18dp"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

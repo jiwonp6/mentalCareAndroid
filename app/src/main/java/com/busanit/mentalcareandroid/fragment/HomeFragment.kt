@@ -139,7 +139,7 @@ class HomeFragment : Fragment() {
                 if (response.isSuccessful) {
                     response.body()?.let { binding.stressData.setText(it.stdAvg.toString()) }
                 } else {
-                    binding.stressData.text = "측정된 데이터가 없습니다."
+                    binding.stressData.text = "None"
                 }
             }
             override fun onFailure(call: Call<StressData>, t: Throwable) {
@@ -154,7 +154,7 @@ class HomeFragment : Fragment() {
                 if (response.isSuccessful) {
                     response.body()?.let { binding.sleepData.setText(it.sldAvg.toString()) }
                 } else {
-                    binding.sleepData.text = "측정된 데이터가 없습니다."
+                    binding.sleepData.text = "None"
                 }
             }
             override fun onFailure(call: Call<SleepData>, t: Throwable) {

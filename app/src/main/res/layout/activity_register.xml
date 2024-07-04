@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="40dp"
         android:paddingLeft="40dp"
         android:paddingRight="40dp">
 
@@ -62,7 +62,7 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/do_hyeon"
                 android:hint="아이디"
-                android:paddingLeft="30dp" />
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/EditTextPassword"
@@ -71,14 +71,14 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/do_hyeon"
                 android:hint="비밀번호\n영문, 숫자, 특수문자 모두 포함 8~20자리"
-                android:paddingLeft="30dp" />
+                android:padding="10dp" />
 
             <RelativeLayout
-                android:id="@+id/buttonLogin"
+                android:id="@+id/buttonCheckedIdExist"
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/button"
+                android:background="@drawable/button_main"
                 android:gravity="center">
 
                 <TextView
@@ -99,7 +99,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="380dp"
         android:paddingLeft="40dp"
         android:paddingRight="40dp">
 
@@ -116,7 +116,7 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/do_hyeon"
                 android:hint="닉네임"
-                android:paddingLeft="30dp" />
+                android:padding="10dp" />
 
             <RadioGroup
                 android:id="@+id/UserGender"
@@ -158,7 +158,7 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/do_hyeon"
                 android:hint="생년월일"
-                android:paddingLeft="30dp" />
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/EditTextEmail"
@@ -167,7 +167,7 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/do_hyeon"
                 android:hint="이메일"
-                android:paddingLeft="30dp" />
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/EditTextPhonenumber"
@@ -176,14 +176,14 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/do_hyeon"
                 android:hint="전화번호"
-                android:paddingLeft="30dp" />
+                android:padding="10dp" />
 
             <RelativeLayout
                 android:id="@+id/buttonRegister"
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/button"
+                android:background="@drawable/button_main"
                 android:gravity="center">
 
                 <TextView
