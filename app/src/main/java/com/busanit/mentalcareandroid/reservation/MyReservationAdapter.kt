@@ -2,6 +2,7 @@ package com.busanit.mentalcareandroid.reservation
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
@@ -22,6 +23,7 @@ private const val TAG = "MyReservationAdapter"
 @RequiresApi(Build.VERSION_CODES.O)
 class MyReservationAdapter(var reservations: List<Reservation>) :
     RecyclerView.Adapter<MyReservationAdapter.MyReservationViewHolder>() {
+    lateinit var sharedPreferences: SharedPreferences
     inner class MyReservationViewHolder(val binding: MyReservationItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         // 항목 뷰에 데이터를 바인딩
@@ -55,12 +57,13 @@ class MyReservationAdapter(var reservations: List<Reservation>) :
                                 .show()
 
 
+                            val userId = sharedPreferences.getString("userId", null)  // 하드코딩 유저 아이디
                             // 데이터 가져오고 화면 갱신
                             val myReservationActivity =
                                 binding.root.context as MyReservationActivity
                             myReservationActivity.getReservationByUserIdApi(
                                 RetrofitClient.api,
-                                "a"       // 하드코딩 유저 아이디
+                                userId!!       // 하드코딩 유저 아이디
                             )
 
                         } else {
