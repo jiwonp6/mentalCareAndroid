@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/hospitalName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="병원 이름"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="37dp" />
+
+    <TextView
+        android:id="@+id/hospitalLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="주소"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="67dp" />
+
+    <TextView
+        android:id="@+id/hospitalCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="전화번호"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="95dp" />
+
+    <TextView
+        android:id="@+id/hospitalWebsite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="홈페이지"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="122dp" />
+
+    <View
+        android:id="@+id/line_2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#B0B0B0"
+        />
+
+
+</LinearLayout>

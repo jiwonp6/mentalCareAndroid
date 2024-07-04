@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="5dp"
+        android:background="@drawable/edit_text_border3"
+        android:textStyle="bold"
+        android:text="선택하신 날짜는 예약이 불가능합니다. \n 다른 날짜로 검색해 보세요."/>
+
+</LinearLayout>

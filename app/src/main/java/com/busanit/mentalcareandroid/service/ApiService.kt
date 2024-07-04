@@ -1,5 +1,7 @@
 package com.busanit.mentalcareandroid.service
 
+import com.busanit.mentalcareandroid.consultation.Consultation
+import com.busanit.mentalcareandroid.hospital.Hospital
 import com.busanit.mentalcareandroid.model.Emotion
 import com.busanit.mentalcareandroid.model.EmotionDiary
 import com.busanit.mentalcareandroid.model.McUser
@@ -9,12 +11,15 @@ import com.busanit.mentalcareandroid.model.McUserUpdate
 import com.busanit.mentalcareandroid.model.SleepData
 import com.busanit.mentalcareandroid.model.StressData
 import com.busanit.mentalcareandroid.model.Test
+import com.busanit.mentalcareandroid.reservation.Reservation
 import retrofit2.http.GET
 import retrofit2.http.Body
 import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.Call
+import retrofit2.http.DELETE
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
@@ -90,4 +95,42 @@ interface ApiService {
     // 게시글 리스트를 가져오는 API (보안, 토큰 필요)
     // @GET("/articles")
     // fun getArticles(@Header("Authorization") token: String): Call<List<Article>>
+
+    // 상담내역
+    @POST("/consultation")
+    fun createConsultation(@Body consultation: Consultation): Call<Consultation>
+
+    @GET("/consultation/{consultationId}")
+    fun getConsultation(@Path("consultationId") consultationId: Long): Call<Consultation>
+
+    @DELETE("/consultation/{consultationId}")
+    fun deleteConsultation(@Path("consultationId") consultationId: Long): Call<Any>
+
+    /* 수정하기
+    @PUT("/consultation/{id}")
+    fun putConsultation(@Path("consultationId") consultationId: Long, @Body consultation: Consultation)*/
+
+    // 병원 정보
+    @POST("api/hospitals")
+    fun createHospital(@Body hospital: Hospital): Call<List<Hospital>>
+
+    @GET("api/hospitals")
+    fun getHospitals(): Call<List<Hospital>>
+
+    @GET("api/hospitals/{hospitalId}")
+    fun getHospital(@Path("hospitalId") hospitalId: String): Call<Hospital>
+
+    // 예약 정보
+    @POST("/reservation")
+    fun createReservation(@Body reservation: Reservation): Call<Reservation>
+
+    @GET("/reservation/{reservationId}")
+    fun getReservation(@Path("reservationId") reservationId: Long): Call<Reservation>
+    @GET("/reservation/user/{userId}")
+    fun getReservationByUserId(@Path("userId") userId: String): Call<List<Reservation>>
+
+    @DELETE("/reservation/{reservationId}")
+    fun deleteReservation(@Path("reservationId") reservationId: Long): Call<String>
+
+
 }
