@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:paddingTop="8dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToOutline="true"
+        android:background="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/right_side"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="17dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="17.33dp"
+            android:src="@drawable/right_side"
+            />
+
+        <ImageView
+            android:id="@+id/time"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="17dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/time"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/boardTag"
+        android:layout_width="155dp"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="103dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:text="게시판 이름"
+        android:fontFamily="@font/do_hyeon"
+        android:textSize="25sp"
+        android:textAppearance="@style/commonStyle"
+        android:lineSpacingExtra="4sp"
+        android:translationY="-1.87sp"
+        android:gravity="center_horizontal|top"
+        />
+
+    <View
+        android:layout_width="380dp"
+        android:layout_height="1.5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="23dp"
+        android:background="@drawable/line"
+        />
+
+    <TextView
+        android:id="@+id/boardTitle"
+        android:layout_width="315dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:textSize="23sp"
+        android:text="게시물 제목"
+        android:fontFamily="@font/do_hyeon"
+        android:textAppearance="@style/commonStyle"
+        android:lineSpacingExtra="3sp"
+        android:translationY="-1.72sp"
+        android:gravity="top"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:id="@+id/userNickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/do_hyeon"
+            android:textAppearance="@style/commonStyle"
+            android:text="글쓴이"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/boardTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/do_hyeon"
+            android:paddingLeft="10dp"
+            android:textAppearance="@style/commonStyle"
+            android:text="작성 시간"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/BoardContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/do_hyeon"
+        android:paddingTop="20sp"
+        android:text="게시글 내용이 나타나는 공간 입니다. "
+        android:textAppearance="@style/commonStyle"
+        android:textSize="20sp"
+        android:paddingLeft="10dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20dp"
+        android:paddingLeft="10dp">
+
+
+        <Button
+            android:id="@+id/heart"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:background="@drawable/heart" />
+
+        <TextView
+            android:id="@+id/heartCount"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="4dp"
+            android:text="0"
+            android:fontFamily="@font/do_hyeon"
+            android:textSize="18sp"
+            android:textAppearance="@style/commonStyle"
+            android:lineSpacingExtra="3sp"
+            android:translationY="-1.35sp"
+            android:gravity="center_horizontal|top"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:src="@drawable/chat_bubble" />
+
+        <TextView
+            android:id="@+id/commentCount"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="4dp"
+            android:text="0"
+            android:fontFamily="@font/do_hyeon"
+            android:textSize="18sp"
+            android:textAppearance="@style/commonStyle"
+            android:lineSpacingExtra="3sp"
+            android:translationY="-1.35sp"
+            android:gravity="center_horizontal|top"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <Button
+            android:id="@+id/boardModifyButton"
+            android:layout_width="71dp"
+            android:layout_height="34dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="100dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/do_hyeon"
+            android:text="수정"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/boardDeleteButton"
+            android:layout_width="71dp"
+            android:layout_height="34dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/do_hyeon"
+            android:textColor="@color/white"
+            android:text="삭제" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <EditText
+                android:id="@+id/commentContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.8"
+                android:hint="댓글을 입력하세요"
+                android:textColor="#DADADA"
+                android:fontFamily="@font/do_hyeon"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/commentButton"
+                android:layout_width="71dp"
+                android:layout_height="34dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/button"
+                android:fontFamily="@font/do_hyeon"
+                android:textColor="@color/white"
+                android:text="입력" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

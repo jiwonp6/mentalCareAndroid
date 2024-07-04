@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/commentUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineHeight="25sp"
+            android:layout_alignParentTop="true"
+            android:text="작성자"
+            android:fontFamily="@font/inter_semibold"
+            android:textSize="18sp"
+            android:textAppearance="@style/commonStyle"
+            android:lineSpacingExtra="3sp"
+            android:translationY="-1.71sp"
+            android:gravity="top"
+            />
+
+        <ImageView
+            android:id="@+id/childrenButton"
+            android:src="@drawable/chat_bubble"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="290dp"
+            android:layout_alignParentTop="true"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/commentContent"
+        android:layout_width="205dp"
+        android:layout_height="21dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="6dp"
+        android:text="댓글 내용이 나타나는 공간입니다. "
+        android:textSize="15sp"
+        android:fontFamily="@font/inter_regular"
+        android:lineHeight="25sp"
+        android:textAppearance="@style/commonStyle"
+        android:lineSpacingExtra="3sp"
+        android:translationY="-1.42sp"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/commentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp"
+        android:text="댓글 작성 시간"
+        android:fontFamily="@font/inter_regular"
+        android:lineHeight="20sp"
+        android:textAppearance="@style/commonStyle"
+        android:lineSpacingExtra="3sp"
+        android:translationY="-1.33sp"
+        android:gravity="top"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <Button
+            android:id="@+id/commentDeleteButton"
+            android:layout_width="71dp"
+            android:layout_height="34dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="244dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/do_hyeon"
+            android:textColor="@color/white"
+            android:text="삭제" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
