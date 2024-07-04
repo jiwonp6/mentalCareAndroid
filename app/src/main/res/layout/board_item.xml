@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="14dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/boardTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="4dp"
+        android:fontFamily="@font/inter_semibold"
+        android:gravity="top"
+        android:lineHeight="22sp"
+        android:lineSpacingExtra="3sp"
+        android:text="게시글 제목 작성"
+        android:textAppearance="@style/commonStyle"
+        android:textSize="16sp"
+        android:translationY="-1.52sp"
+        android:layout_gravity="left"
+        android:paddingLeft="30sp"/>
+
+    <TextView
+        android:id="@+id/boardContent"
+        android:layout_gravity="left"
+        android:paddingLeft="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="top"
+        android:lineHeight="18sp"
+        android:lineSpacingExtra="2sp"
+        android:text="게시글 내용을 보여주는 공간입니다. "
+        android:textAppearance="@style/commonStyle"
+        android:textSize="15sp"
+        android:translationY="-1.23sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="6dp"
+        android:paddingLeft="30sp">
+
+
+        <ImageView
+            android:id="@+id/heart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/heart" />
+
+        <TextView
+            android:id="@+id/heartCount"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center_horizontal|top"
+            android:lineHeight="18sp"
+            android:lineSpacingExtra="2sp"
+            android:text="0"
+            android:textAppearance="@style/commonStyle"
+            android:textSize="13sp"
+            android:translationY="-1.23sp" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:paddingLeft="6dp"
+            android:src="@drawable/chat_bubble" />
+
+        <TextView
+            android:id="@+id/commentCount"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center_horizontal|top"
+            android:lineHeight="18sp"
+            android:lineSpacingExtra="2sp"
+            android:text="0"
+            android:textAppearance="@style/commonStyle"
+            android:textSize="13sp"
+            android:translationY="-1.23sp" />
+
+        <TextView
+            android:id="@+id/boardTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="top"
+            android:lineHeight="18sp"
+            android:lineSpacingExtra="2sp"
+            android:text="시간"
+            android:textAppearance="@style/commonStyle"
+            android:textSize="13sp"
+            android:translationY="-1.23sp" />
+
+        <TextView
+            android:id="@+id/userNickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="top"
+            android:lineHeight="18sp"
+            android:lineSpacingExtra="2sp"
+            android:text="글쓴이"
+            android:textAppearance="@style/commonStyle"
+            android:textSize="13sp"
+            android:translationY="-1.23sp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="315dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/line" />
+
+
+</LinearLayout>

@@ -1,16 +1,26 @@
 package com.busanit.mentalcareandroid.service
 
+
+import com.busanit.mentalcareandroid.model.Board
+import com.busanit.mentalcareandroid.model.ChildrenComment
+import com.busanit.mentalcareandroid.model.Comment
 import com.busanit.mentalcareandroid.consultation.Consultation
 import com.busanit.mentalcareandroid.hospital.Hospital
 import com.busanit.mentalcareandroid.model.Emotion
 import com.busanit.mentalcareandroid.model.EmotionDiary
+import com.busanit.mentalcareandroid.model.Heart
+import com.busanit.mentalcareandroid.model.HeartResponse
 import com.busanit.mentalcareandroid.model.McUser
 import com.busanit.mentalcareandroid.model.McUserLogin
 import com.busanit.mentalcareandroid.model.McUserLoginSuccess
 import com.busanit.mentalcareandroid.model.McUserUpdate
+import com.busanit.mentalcareandroid.model.NewBoard
+import com.busanit.mentalcareandroid.model.NewChildren
+import com.busanit.mentalcareandroid.model.NewComment
 import com.busanit.mentalcareandroid.model.SleepData
 import com.busanit.mentalcareandroid.model.StressData
 import com.busanit.mentalcareandroid.model.Test
+import com.busanit.mentalcareandroid.model.UpdateBoard
 import com.busanit.mentalcareandroid.reservation.Reservation
 import retrofit2.http.GET
 import retrofit2.http.Body
@@ -96,6 +106,49 @@ interface ApiService {
     // @GET("/articles")
     // fun getArticles(@Header("Authorization") token: String): Call<List<Article>>
 
+
+    @GET("/board/TagType/COMMON")
+    fun boardTagCommon() : Call<List<Board>>
+
+    @GET("/board/TagType/MENTAL")
+    fun boardTagMental() : Call<List<Board>>
+
+    @GET("/board/TagType/CHEERING")
+    fun boardTagCheering() : Call<List<Board>>
+
+    @GET("/comment/boardId/{boardId}")
+    fun getCommentsByBoardId(@Path("boardId") boardId : Long) : Call<List<Comment>>
+
+    @POST("/board")
+    fun createBoard(@Body newBoard: NewBoard) : Call<Board>
+
+    @POST("/boardHeart/up/{boardId}")
+    fun upAndDownHeart(@Body heart : Heart, @Path("boardId") boardId: Long) : Call<HeartResponse>
+
+    @POST("/comment")
+    fun createComment(@Body newComment: NewComment) : Call<Comment>
+
+    @POST("/children")
+    fun createChildren(@Body newChildren: NewChildren) : Call<ChildrenComment>
+
+    @DELETE("/board/delete/{boardId}")
+    fun deleteBoard(@Path("boardId") boardId: Long) : Call <Board>
+
+    @DELETE("/comment/{commentId}")
+    fun deleteComment(@Path("commentId") commentId: Long) : Call<Comment>
+
+    @PUT("/board/update/{boardId}")
+    fun updateBoard(@Body updateBoard: UpdateBoard, @Path("boardId") boardId: Long) : Call<Board>
+
+    @GET("children/commentId/{commentId}")
+    fun getChildrenByCommentId(@Path("commentId") commentId : Long) : Call<List<ChildrenComment>>
+
+    @DELETE("children/{childrenId}")
+    fun deleteChildrenComment(@Path("childrenId") childrenId :Long) : Call<ChildrenComment>
+
+    @GET("/board/{boardId}")
+    fun getBoardBYId(@Path("boardId") boardId: Long) : Call<Board>
+
     // 상담내역
     @POST("/consultation")
     fun createConsultation(@Body consultation: Consultation): Call<Consultation>
@@ -131,6 +184,5 @@ interface ApiService {
 
     @DELETE("/reservation/{reservationId}")
     fun deleteReservation(@Path("reservationId") reservationId: Long): Call<String>
-
 
 }
