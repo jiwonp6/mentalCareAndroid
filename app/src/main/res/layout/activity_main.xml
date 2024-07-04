@@ -14,12 +14,50 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
+    <LinearLayout
+        android:id="@+id/mainMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabIndicatorColor="#2196F3"
-        app:tabSelectedTextColor="@color/black"
-        app:tabTextColor="#ACACAC" />
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+    <TextView
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="홈"
+        android:textSize="25dp"
+        android:fontFamily="@font/do_hyeon"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        />
+        <TextView
+            android:id="@+id/hospital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="병원"
+            android:textSize="25dp"
+            android:fontFamily="@font/do_hyeon"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+        <TextView
+            android:id="@+id/board"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="게시판"
+            android:textSize="25dp"
+            android:fontFamily="@font/do_hyeon"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+
+    </LinearLayout>
 
 </LinearLayout>

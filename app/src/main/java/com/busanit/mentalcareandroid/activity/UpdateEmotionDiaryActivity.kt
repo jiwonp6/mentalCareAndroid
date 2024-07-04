@@ -1,6 +1,6 @@
 package com.busanit.mentalcareandroid.activity
 
-import RecyclerViewAdapter
+import EmotionRecyclerViewAdapter
 import android.app.Activity
 import android.content.Intent
 import android.content.SharedPreferences
@@ -18,7 +18,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class UpdateEmotionDiaryActivity : AppCompatActivity(), RecyclerViewAdapter.OnItemClickListener {
+class UpdateEmotionDiaryActivity : AppCompatActivity(), EmotionRecyclerViewAdapter.OnItemClickListener {
     lateinit var binding: ActivityUpdateEmotionDiaryBinding
     private lateinit var sharedPreferences: SharedPreferences
     private var selectedEmotion: Emotion? = null
@@ -98,7 +98,7 @@ class UpdateEmotionDiaryActivity : AppCompatActivity(), RecyclerViewAdapter.OnIt
                 Log.d("mylog", "onResponse: ${selectedEmotionId}")
                 if (response.isSuccessful) {
                     response.body()?.let { emotionList ->
-                        val adapter = RecyclerViewAdapter(emotionList, this@UpdateEmotionDiaryActivity)
+                        val adapter = EmotionRecyclerViewAdapter(emotionList, this@UpdateEmotionDiaryActivity)
 
                         adapter.setSelectedEmotionId(selectedEmotionId)
                         binding.emotionList.adapter = adapter
