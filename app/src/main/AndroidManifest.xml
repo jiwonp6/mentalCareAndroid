@@ -26,7 +26,7 @@
         </activity>
       
               <activity
-            android:name=".activity.WriteActivit"
+            android:name=".activity.WriteActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,7 +36,6 @@
         </activity>
       
         <activity
-            android:name=".activity.UpdateActivity"
             android:name=".reservation.MyReservationActivity"
             android:exported="true">
             <intent-filter>
@@ -131,25 +130,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.BoardDetailctivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".activity.UpdateEmotionDiaryActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".activity.EmotionDiaryDetailViewActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

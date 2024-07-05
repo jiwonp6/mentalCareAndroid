@@ -28,7 +28,6 @@ class CommunityMainActivity : AppCompatActivity() {
         binding.writeButton.setOnClickListener { startActivity(intent) }
 
 
-
         // 사용할 프래그먼트
         fragmentList.add(CommonFragment())
         fragmentList.add(MentalFragment())
@@ -36,24 +35,26 @@ class CommunityMainActivity : AppCompatActivity() {
 
         binding.pager2.adapter = TabAdapter(this, fragmentList)
 
+
         // 탭 이름 설정
         val tabName = arrayOf("일반 고민", "정신건강", "응원")
 
         binding.run {
             TabLayoutMediator(tabLayout, pager2) { tab, position ->
-                tab.text = tabName[position]        // 탭 이름 설정
+                tab.text = tabName[position]
             }.attach()
         }
 
 
     }
+}
 
-    class TabAdapter(fragmentActivity: FragmentActivity, val fragmentList: MutableList<Fragment>) : FragmentStateAdapter(fragmentActivity) {
-        override fun getItemCount(): Int = 3
 
-        override fun createFragment(position: Int): Fragment {
-            return fragmentList[position]
-        }
+
+class TabAdapter(fragmentActivity: FragmentActivity, val fragmentList: MutableList<Fragment>) : FragmentStateAdapter(fragmentActivity) {
+    override fun getItemCount(): Int = 3
+
+    override fun createFragment(position: Int): Fragment {
+        return fragmentList[position]
     }
-
 }

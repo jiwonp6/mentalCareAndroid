@@ -8,10 +8,9 @@
     tools:context=".activity.MainActivity"
     android:orientation="vertical"
     android:background="#FFFFFF"
-    android:paddingTop="20dp"
+    android:paddingTop="8dp"
     android:paddingLeft="20dp"
     android:paddingRight="20dp">
-
 
     <FrameLayout
         android:layout_width="match_parent"

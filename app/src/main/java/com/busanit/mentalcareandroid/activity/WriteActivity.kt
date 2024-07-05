@@ -18,18 +18,17 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class WriteActivity : AppCompatActivity() {
-
     lateinit var binding: ActivityWriteBinding
     lateinit var boards: List<Board>
     lateinit var boardAdapter: BoardAdapter
     lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityWriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        sharedPreferences = getSharedPreferences("app_pref", MODE_PRIVATE)
 
+        sharedPreferences = getSharedPreferences("app_pref", MODE_PRIVATE)
 
 
         binding.run {
@@ -44,14 +43,15 @@ class WriteActivity : AppCompatActivity() {
                     R.id.cheeringButton -> tag = "CHEERING"
                 }
 
-                val userNickname = sharedPreferences.getString("userNickname", null)
-                val newBoard = NewBoard(tag, title, content, userNickname.toString())
+                val userNickname = sharedPreferences.getString("userNickname", null).toString()
+
+                val newBoard = NewBoard(tag, title, content, userNickname)
                 boards = mutableListOf()
 
                 RetrofitClient.api.createBoard(newBoard).enqueue(object : Callback<Board> {
                     override fun onResponse(call: Call<Board>, response: Response<Board>) {
-                        if (response.isSuccessful) {
-                            Toast.makeText(this@WriteActivity, "새로운 게시글 작성", Toast.LENGTH_SHORT)
+                        if (response.isSuccessful) {0
+                            Toast.makeText(this@WriteActivity, "새로운 게시글 작성이 완료되었습니다.", Toast.LENGTH_SHORT)
                                 .show()
                             Log.d("mylog", "onResponse: ${response.body()}")
                             val board = response.body()!!
@@ -69,6 +69,10 @@ class WriteActivity : AppCompatActivity() {
                     }
                 })
             }
+
+
+
+
         }
     }
 }
