@@ -8,7 +8,7 @@
     tools:context=".activity.MainActivity"
     android:orientation="vertical"
     android:background="#FFFFFF"
-    android:paddingTop="20dp"
+    android:paddingTop="8dp"
     android:paddingLeft="15dp"
     android:paddingRight="15dp">
 
@@ -42,7 +42,7 @@
             android:layout_width="71dp"
             android:layout_height="34dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="310dp"
+            android:layout_marginLeft="290dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="15dp"
             android:background="@drawable/button"
@@ -54,12 +54,14 @@
 
     <EditText
         android:id="@+id/editTitle"
-        android:layout_width="match_parent"
+        android:layout_width="360dp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
+        android:textColorHint="#DADADA"
         android:hint="제목을 입력하세요"
         android:textSize="20sp"
-        android:textColor="#DADADA"
+        android:textColor="#4C4F4C"
         android:fontFamily="@font/do_hyeon"
         android:inputType="text" />
 
@@ -67,7 +69,8 @@
         android:id="@+id/tagGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:paddingLeft="8dp">
 
         <RadioButton
             android:paddingTop="5dp"
@@ -104,21 +107,22 @@
         android:layout_width="match_parent"
         android:layout_height="330sp"
         android:hint="내용을 입력하세요"
-        android:textColor="#DADADA"
+        android:textColorHint="#DADADA"
+        android:textColor="#4C4F4C"
         android:textSize="20sp"
         android:fontFamily="@font/do_hyeon"
         android:background= "@null"
         android:gravity="top"
-        android:paddingTop="10dp"
+        android:paddingTop="13dp"
+        android:paddingLeft="8dp"
         />
 
     <TextView
         android:layout_width="124dp"
-        android:layout_height="25dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_height="30dp"
         android:text="게시판 안내사항"
         android:textSize="18sp"
+        android:paddingBottom="4dp"
         android:fontFamily="@font/inter_semibold"
         android:textAppearance="@style/guide"
         android:lineSpacingExtra="3sp"

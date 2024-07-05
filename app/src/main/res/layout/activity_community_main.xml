@@ -8,14 +8,19 @@
     tools:context=".activity.MainActivity"
     android:orientation="vertical"
     android:background="#FFFFFF"
-    android:padding="8dp"
-    android:paddingTop="12dp">
+    android:paddingTop ="8dp"
+    android:paddingBottom="10dp">
 
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:tabIndicatorHeight="1.3dp"
+        app:tabIndicatorColor="#C0C0C0"
+        app:tabSelectedTextAppearance="@style/tab_bold"
+        app:tabTextAppearance="@style/tab"
+        android:paddingTop="10dp">
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -29,7 +34,8 @@
 
     <Button
         android:id="@+id/writeButton"
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:background="@drawable/long_button"
         android:layout_marginBottom="10sp"

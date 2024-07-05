@@ -41,8 +41,7 @@ class CommentDetailActivity : AppCompatActivity() {
 
         val commentId = intent.getLongExtra("commentId", -1)
 
-        RetrofitClient.api.getChildrenByCommentId(commentId).enqueue(object :
-            Callback<List<ChildrenComment>> {
+        RetrofitClient.api.getChildrenByCommentId(commentId).enqueue(object : Callback<List<ChildrenComment>> {
             override fun onResponse(call: Call<List<ChildrenComment>>, response: Response<List<ChildrenComment>>) {
                 if(response.isSuccessful) {
                     childrenComments = response.body() ?: emptyList<ChildrenComment>().toMutableList()
@@ -62,12 +61,13 @@ class CommentDetailActivity : AppCompatActivity() {
 
 
         binding.commentButton.setOnClickListener {
-            val childrenContent = binding.commentContentWrite.text.toString()
+            // 로그인된 userNickname 데이터 가져오기
             val userNickname = sharedPreferences.getString("userNickname", null).toString()
+
+            val childrenContent = binding.commentContentWrite.text.toString()
             val newChildren = NewChildren(childrenContent, userNickname, commentId)
 
-            RetrofitClient.api.createChildren(newChildren).enqueue(object :
-                Callback<ChildrenComment> {
+            RetrofitClient.api.createChildren(newChildren).enqueue(object : Callback<ChildrenComment>{
                 override fun onResponse(
                     call: Call<ChildrenComment>,
                     response: Response<ChildrenComment>
@@ -78,7 +78,7 @@ class CommentDetailActivity : AppCompatActivity() {
                         childrenMutableList.add(childrenComment)
                         childrenAdapter.updateChildren(childrenMutableList)
                         binding.commentContentWrite.text.clear()
-                        Toast.makeText(this@CommentDetailActivity, "답글 작성 완료", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@CommentDetailActivity, "답글 작성이 완료되었습니다.", Toast.LENGTH_SHORT).show()
 
                         Log.d(TAG, "onResponse: 응답 성공 ${response.body()}")
                     } else {

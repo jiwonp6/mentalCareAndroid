@@ -22,6 +22,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 private const val TAG = "BoardDetailActivity"
+
 class BoardDetailActivity : AppCompatActivity() {
     lateinit var binding: ActivityBoardDetailBinding
     lateinit var commentAdapter: CommentAdapter
@@ -33,15 +34,21 @@ class BoardDetailActivity : AppCompatActivity() {
         binding = ActivityBoardDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        sharedPreferences = getSharedPreferences("app_pref", MODE_PRIVATE)
+
         // 어댑터에서 데이터 받아오기
         val boardId = intent.getLongExtra("boardId", -1)
         val boardTitle = intent.getStringExtra("boardTitle")
-        val userNickName = sharedPreferences.getString("userNickname", null).toString()
         val boardTime = intent.getStringExtra("boardTime")
         val boardContent = intent.getStringExtra("boardContent")
         val heartCount = intent.getIntExtra("heartCount", 0)
         val commentCount = intent.getIntExtra("commentCount", 0)
         val boardTag = intent.getStringExtra("boardTag")
+
+        // sharedPreference에서 userNickname에 대한 정보 가져오기
+        val userNickName = sharedPreferences.getString("userNickname", null).toString()
+
+
 
         // 어댑터에서 받아온 데이터 입력
         inputBoardText(boardTitle, userNickName, boardTime, boardContent, heartCount, commentCount, boardTag)
@@ -71,17 +78,17 @@ class BoardDetailActivity : AppCompatActivity() {
 
         // 하트 클릭시 공감 버튼 활성화
         binding.heart.setOnClickListener {
-            sharedPreferences = getSharedPreferences("app_pref", MODE_PRIVATE)
-            val userId = sharedPreferences.getString("userId", null)
+            // sharedPreferences에서 로그인된 유저의 id 가져오기
+            val userId = sharedPreferences.getString("userId", null).toString()
             // 객체 생성
-            val heart = Heart(userId.toString())
+            val heart = Heart(userId)
 
             // 공감 생성 및 취소를 위한 api
             RetrofitClient.api.upAndDownHeart(heart, boardId)
                 .enqueue(object : Callback<HeartResponse> {
                     override fun onResponse(call: Call<HeartResponse>, response: Response<HeartResponse>) {
                         if (response.isSuccessful) {
-                            Toast.makeText(this@BoardDetailActivity, "공감버튼 클릭", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@BoardDetailActivity, "공감버튼 클릭이 클릭되었습니다.", Toast.LENGTH_SHORT).show()
 
                             // 갯수 받아서 heartCount에 입력
                             val count = response.body()?.count
@@ -98,13 +105,13 @@ class BoardDetailActivity : AppCompatActivity() {
         binding.commentButton.setOnClickListener {
             // 댓글 입력을 위한 데이터 받기 + 새로운 객체 생성
             val commentContent = binding.commentContent.text.toString()
-            val newComment = NewComment(commentContent, userNickName.toString(), boardId)
+            val newComment = NewComment(commentContent, userNickName, boardId)
 
             // 댓글 추가를 위한 api
             RetrofitClient.api.createComment(newComment).enqueue(object : Callback<Comment> {
                 override fun onResponse(call: Call<Comment>, response: Response<Comment>) {
                     if (response.isSuccessful) {
-                        Toast.makeText(this@BoardDetailActivity, "새로운 댓글 작성", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@BoardDetailActivity, "댓글이 작성되었습니다.", Toast.LENGTH_SHORT).show()
                         binding.commentContent.text.clear()
                         // 입력된 데이터 리사이클러뷰에 업데이트
                         val comment = response.body()!!
