@@ -1,3 +1,4 @@
+import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
@@ -51,7 +52,6 @@ object RetrofitClient {
     class AuthInterceptor : Interceptor {
         @Throws(IOException::class)
         override fun intercept(chain: Interceptor.Chain): Response {
-
             val token = sharedPreferences.getString("access_token", null)
             val requestBuilder = chain.request().newBuilder()
 

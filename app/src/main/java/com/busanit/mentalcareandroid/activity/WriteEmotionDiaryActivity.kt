@@ -44,6 +44,7 @@ class WriteEmotionDiaryActivity : AppCompatActivity(), EmotionRecyclerViewAdapte
 
     /* 메소드 */
     // 감정 태그 list
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun emotionList() {
         RetrofitClient.api.getEmotionList().enqueue(object : Callback<List<Emotion>> {
             override fun onResponse(call: Call<List<Emotion>>, response: Response<List<Emotion>>) {
@@ -98,6 +99,7 @@ class WriteEmotionDiaryActivity : AppCompatActivity(), EmotionRecyclerViewAdapte
     }
 
     // 감정 일지 작성
+    @RequiresApi(Build.VERSION_CODES.O)
     fun writeEmotionDiary(userId: String, emotionDiary: EmotionDiary) {
         RetrofitClient.api.writeEmotionDiary(userId, emotionDiary)
             .enqueue(object : Callback<EmotionDiary> {

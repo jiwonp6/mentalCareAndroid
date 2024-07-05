@@ -2,9 +2,11 @@ package com.busanit.mentalcareandroid.activity
 
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.busanit.mentalcareandroid.adapter.ViewPagerAdapter
 import com.busanit.mentalcareandroid.databinding.ActivityMainBinding
@@ -19,17 +21,12 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         RetrofitClient.initialize(this)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // 저장된 토큰을 보호된 리소스 요청 시 사용
-        // val token = sharedPreferences.getString("token", "") ?: ""
-
-        // 인증 요청시 HTTP 헤더에 "Bearer {jwt_token}" 요청
-        // callProtect("Bearer $token")
 
         setupViewPager()    // 뷰페이저 설정
     }
@@ -54,6 +51,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // 보호된 자원 네트워크 요청 함수 : 403 번 (금지된 응답 Forbidden, 자원 확인 불가), 토큰과 함께 요청 => 200번 Ok
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun callProtect(token: String) {
         val api = RetrofitClient.api
 
@@ -81,6 +79,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // 네트워크 요청 테스트 함수 : 200 번 응답과 함께 자원 응답
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun callTest() {
         val api = RetrofitClient.api
 

@@ -99,6 +99,7 @@ class MonthlyActivity : AppCompatActivity() {
 
     /* 선택 날짜 */
     // 데이터(스트레스, 수면) & 감정일지
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun setUserStressData(userId: String, date: String) {
         RetrofitClient.api.getSelectedDateStressData(userId, date)
             .enqueue(object : Callback<StressData> {
@@ -116,7 +117,7 @@ class MonthlyActivity : AppCompatActivity() {
                 }
             })
     }
-
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun setUserSleepData(userId: String, date: String) {
         RetrofitClient.api.getSelectedDateSleepData(userId, date)
             .enqueue(object : Callback<SleepData> {
@@ -134,7 +135,7 @@ class MonthlyActivity : AppCompatActivity() {
                 }
             })
     }
-
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun setUserEmotionDiary(userId: String, date: String) {
         RetrofitClient.api.getSelectedDateEmotionDiary(userId, date)
             .enqueue(object : Callback<EmotionDiary> {
@@ -193,7 +194,7 @@ class MonthlyActivity : AppCompatActivity() {
             R.id.buttonLogout -> {
                 // Handle logout action
                 sharedPreferences.edit()
-                    .remove("token")
+                    .remove("access_token")
                     .remove("userId")
                     .remove("userNickname")
                     .apply()

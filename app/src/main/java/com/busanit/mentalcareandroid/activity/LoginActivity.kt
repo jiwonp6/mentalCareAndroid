@@ -1,8 +1,10 @@
 package com.busanit.mentalcareandroid.activity
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.busanit.mentalcareandroid.databinding.ActivityLoginBinding
 import com.busanit.mentalcareandroid.model.McUserLogin
@@ -13,6 +15,7 @@ import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         RetrofitClient.initialize(this)
@@ -39,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
-
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun Login(user: McUserLogin, userId: String) {
         RetrofitClient.api.authLogin(user).enqueue(object : Callback<McUserLoginSuccess> {
             override fun onResponse(

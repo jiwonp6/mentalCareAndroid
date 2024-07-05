@@ -1,13 +1,16 @@
 package com.busanit.mentalcareandroid.activity
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.busanit.mentalcareandroid.databinding.ActivityTitleBinding
 
 class TitleActivity : AppCompatActivity() {
     lateinit var binding: ActivityTitleBinding
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         RetrofitClient.initialize(this)

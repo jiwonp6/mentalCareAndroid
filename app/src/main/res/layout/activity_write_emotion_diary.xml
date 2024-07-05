@@ -102,9 +102,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="작성"
-                android:backgroundTint="#81BF80"
+                android:textColor="@color/white"
+                android:background="@drawable/button_prim"
                 android:fontFamily="@font/do_hyeon"
-                android:textSize="18dp"/>
+                android:textSize="20dp"/>
         </LinearLayout>
 
     </RelativeLayout>

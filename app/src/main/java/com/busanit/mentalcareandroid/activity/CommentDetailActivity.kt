@@ -1,10 +1,12 @@
 package com.busanit.mentalcareandroid.activity
 
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -25,6 +27,7 @@ class CommentDetailActivity : AppCompatActivity() {
     lateinit var childrenAdapter: ChildrenAdapter
     lateinit var sharedPreferences : SharedPreferences
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCommentDetailBinding.inflate(layoutInflater)

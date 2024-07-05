@@ -1,6 +1,5 @@
 package com.busanit.mentalcareandroid.activity
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Build
@@ -12,7 +11,6 @@ import com.busanit.mentalcareandroid.databinding.ActivityWithdrawUserBinding
 import com.busanit.mentalcareandroid.model.McUser
 import com.busanit.mentalcareandroid.model.McUserLogin
 import com.busanit.mentalcareandroid.model.McUserLoginSuccess
-import com.busanit.mentalcareandroid.model.McUserUpdate
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -38,7 +36,7 @@ class WithdrawUserActivity : AppCompatActivity() {
         }
 
     }
-
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun checkPasswordRequest(user_check: McUserLogin, userPw: String) {
         RetrofitClient.api.authLogin(user_check).enqueue(object : Callback<McUserLoginSuccess> {
             override fun onResponse(
@@ -64,7 +62,7 @@ class WithdrawUserActivity : AppCompatActivity() {
         })
 
     }
-
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun withdrawUser(userId: String) {
         RetrofitClient.api.withdrawUser(userId).enqueue(object : Callback<McUser> {
             override fun onResponse(call: Call<McUser>, response: Response<McUser>) {
@@ -75,7 +73,7 @@ class WithdrawUserActivity : AppCompatActivity() {
                     // 토큰 제거
                     val sharedPreferences = getSharedPreferences("app_pref", MODE_PRIVATE)
                     sharedPreferences?.edit()
-                        ?.remove("token")
+                        ?.remove("access_token")
                         ?.remove("useId")
                         ?.remove("userNickname")
                         ?.apply()

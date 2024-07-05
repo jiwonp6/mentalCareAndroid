@@ -100,7 +100,7 @@ class HomeFragment : Fragment() {
             R.id.buttonLogout -> {
                 // Handle logout action
                 sharedPreferences.edit()
-                    .remove("token")
+                    .remove("access_token")
                     .remove("userId")
                     .remove("userNickname")
                     .apply()

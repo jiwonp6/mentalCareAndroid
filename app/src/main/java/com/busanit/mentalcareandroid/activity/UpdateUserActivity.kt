@@ -113,13 +113,13 @@ class UpdateUserActivity : AppCompatActivity() {
             // 회원 정보 수정 메소드
             val sharedPreferences: SharedPreferences? =
                 getSharedPreferences("app_pref", MODE_PRIVATE)
-            val token = sharedPreferences?.getString("token", "").orEmpty()
+            val token = sharedPreferences?.getString("access_token", "").orEmpty()
             val userId = sharedPreferences?.getString("userId", "").orEmpty()
             updateUser(token, userId, user)
 
         }
     }
-
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun setOriginUserInfo(userId: String) {
         RetrofitClient.api.getByUserId(userId).enqueue(object : Callback<McUser> {
             override fun onResponse(call: Call<McUser>, response: Response<McUser>) {
@@ -147,7 +147,7 @@ class UpdateUserActivity : AppCompatActivity() {
             }
         })
     }
-
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun checkUserPw(user_check: McUserLogin) {
         RetrofitClient.api.authLogin(user_check).enqueue(object : Callback<McUserLoginSuccess> {
             override fun onResponse(
@@ -170,7 +170,7 @@ class UpdateUserActivity : AppCompatActivity() {
             }
         })
     }
-
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun updateUser(token: String, userId: String, user: McUserUpdate) {
         RetrofitClient.api.updateUser(token, userId, user).enqueue(object : Callback<McUser> {
             override fun onResponse(call: Call<McUser>, response: Response<McUser>) {

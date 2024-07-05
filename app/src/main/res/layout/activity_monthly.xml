@@ -70,6 +70,7 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="#828282"
                     android:text="menu"
+                    android:textColor="@color/white"
                     android:layout_margin="5dp"
                     android:fontFamily="@font/dm_serif_display"
                     android:textSize="15dp"

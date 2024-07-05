@@ -101,6 +101,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun createUser(user: McUser) {
         RetrofitClient.api.createUser(user).enqueue(object : Callback<McUser> {
             override fun onResponse(call: Call<McUser>, response: Response<McUser>) {
@@ -121,6 +122,7 @@ class RegisterActivity : AppCompatActivity() {
         })
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun checkUserIdExist(userId: String) {
         RetrofitClient.api.getByUserId(userId).enqueue(object : Callback<McUser> {
             override fun onResponse(call: Call<McUser>, response: Response<McUser>) {

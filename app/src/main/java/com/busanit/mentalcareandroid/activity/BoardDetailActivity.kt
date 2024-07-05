@@ -4,10 +4,12 @@ import RetrofitClient
 import android.app.Activity
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.busanit.mentalcareandroid.adapter.CommentAdapter
@@ -29,6 +31,7 @@ class BoardDetailActivity : AppCompatActivity() {
     lateinit var comments: List<Comment>
     lateinit var sharedPreferences: SharedPreferences
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBoardDetailBinding.inflate(layoutInflater)
