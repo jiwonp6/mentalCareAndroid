@@ -7,12 +7,16 @@ import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.busanit.mentalcareandroid.R
 import com.busanit.mentalcareandroid.consultation.ConsultationActivity
 import com.busanit.mentalcareandroid.consultation.MyConsultationActivity
 import com.busanit.mentalcareandroid.databinding.MyReservationItemBinding
+import com.busanit.mentalcareandroid.hospital.HospitalActivity
 import com.busanit.mentalcareandroid.service.ApiService
 import retrofit2.Call
 import retrofit2.Callback
@@ -35,13 +39,15 @@ class MyReservationAdapter(var reservations: List<Reservation>) :
                 "${reservation.reservationDate.month} ${reservation.reservationDate.dayOfMonth}일 "
             binding.textViewTime.text = "${reservation.reservationTime.toString()}"
 
+            val context = binding.root.context
             // 항목을 클릭했을 때 Consultation 액티비티를 시작하고 데이터 전달
             binding.root.setOnClickListener {
 
-                val context = it.context
-                getReservationByIdApi(RetrofitClient.api, reservation.reservationId!!, context)
 
+                getReservationByIdApi(RetrofitClient.api, reservation.reservationId!!, context)
             }
+
+
 
             binding.deleteReservationButton.setOnClickListener {
 
@@ -56,7 +62,7 @@ class MyReservationAdapter(var reservations: List<Reservation>) :
                             Toast.makeText(it.context, "예약이 정상적으로 삭제되었습니다", Toast.LENGTH_SHORT)
                                 .show()
 
-
+                            sharedPreferences = context.getSharedPreferences("app_pref", Context.MODE_PRIVATE)
                             val userId = sharedPreferences.getString("userId", null)  // 하드코딩 유저 아이디
                             // 데이터 가져오고 화면 갱신
                             val myReservationActivity =

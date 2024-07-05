@@ -1,6 +1,8 @@
 package com.busanit.mentalcareandroid.reservation
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -22,6 +24,7 @@ import java.time.LocalTime
 private const val TAG = "BottomSheetFragmentRese"
 // 2. 프래그먼트 작성 : 캘린더에 날짜를 클릭하면 예약 시간 프래그먼트가 뜨도록
 class BottomSheetFragmentReservationAvail : BottomSheetDialogFragment() {
+    lateinit var sharedPreferences: SharedPreferences
     lateinit var binding: ReservationAvailableBinding
     var time: String = ""
 
@@ -65,7 +68,9 @@ class BottomSheetFragmentReservationAvail : BottomSheetDialogFragment() {
                 val reservationDate = LocalDate.of(year, month, dayOfMonth )
                 val reservationTime = LocalTime.of(time,0)
 
-                val userId = "a" // 하드코딩 유저 아이디
+                sharedPreferences =
+                    context?.getSharedPreferences("app_pref", Context.MODE_PRIVATE)!!
+                val userId = sharedPreferences.getString("userId", null)  // 하드코딩 유저 아이디
                 val reservation = Reservation(null, userId, reservationDate, reservationTime,  hospitalId, null, null)
                 Log.d(TAG, "onViewCreated: ${reservation}")
                 // 1. 레트로핏 네트워크 요청
