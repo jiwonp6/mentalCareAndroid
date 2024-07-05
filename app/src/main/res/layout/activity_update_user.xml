@@ -61,7 +61,8 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/do_hyeon"
                 android:hint="현재 비밀번호"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:inputType="textPassword"/>
 
             <EditText
                 android:id="@+id/EditTextNewPassword"
@@ -70,6 +71,7 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/do_hyeon"
                 android:hint="변경 비밀번호\n영문, 숫자, 특수문자 모두 포함 8~20자리"
+                android:inputType="textPassword"
                 android:padding="10dp" />
 
             <RelativeLayout
